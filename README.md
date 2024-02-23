@@ -4,7 +4,7 @@
 
 这是一个斗鱼TV主播冬瓜强的弹幕收集网站项目，白字的在线桌面笔记本。
 
-网站地址：DGQ63136.icu
+网站地址：**DGQ63136.icu**
 
 请使用EDGE浏览器，chrome浏览器访问。
 
@@ -55,7 +55,7 @@ npm run dev
 npm run build
 ```
 
-有建议或BUG请提交在https://www.wjx.cn/vm/QmBulzI.aspx#
+有建议或BUG请提交在[这里提交建议和bug](https://www.wjx.cn/vm/QmBulzI.aspx#)
 
-弹幕投稿请在https://www.wjx.cn/vm/P9UjaRI.aspx# 
+弹幕投稿请在[这里投稿新鲜弹幕](https://www.wjx.cn/vm/P9UjaRI.aspx#) 
 

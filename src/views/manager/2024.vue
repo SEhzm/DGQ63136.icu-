@@ -40,6 +40,7 @@ request.get('/').then(res => {
 const tableData = ref([
 
   {barrage: '2024年1月10日23点29分  冬瓜强警长一刀带走五个好人 警钟长鸣'},
+  {barrage: '2024年1月8日19：52冬瓜发誓再骂超哥就抽自己脸警钟长鸣'},
 
 
 

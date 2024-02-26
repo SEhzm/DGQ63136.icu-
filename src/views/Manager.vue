@@ -15,7 +15,7 @@
             <a href="https://yuba.douyu.com/user/main/lOdEpeOJzwnR" target="_blank">
               <img src="@/assets/imgs/douyu.jpg" alt="douyu" style="margin-right: 15px;">
             </a>
-            <a href="https://www.github.com" target="_blank">
+            <a href="https://github.com/SEhzm/DGQ63136.icu-" target="_blank">
               <img src="@/assets/imgs/github.png" alt="github" style="margin-right: 15px;">
             </a>
             <a href="https://www.123pan.com/s/wwFKjv-4RijH.html" target="_blank">
@@ -173,28 +173,6 @@ console.log($route.path)
   bottom:0px;
   height:50px;
 }
-
-
-
-.image-text-container {  
-  display: flex;  
-  align-items: center; /* 如果需要文字和图片垂直居中 */  
-}  
-  
-.inline-image {  
-  width: 100px; /* 设置图片宽度 */  
-  height: auto; /* 保持图片比例 */  
-  margin-right: 10px; /* 图片和文字之间的间距 */  
-}  
-  
-.inline-text {  
-  vertical-align: middle; /* 如果需要文字与图片垂直对齐 */  
-}
-
-
-
-
-
 
 
 </style>

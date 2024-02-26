@@ -28,13 +28,15 @@
     </div>
 
     <div style="display: flex">
-      <div style="width: 190px; border-right: 0px solid #ddd; min-height: calc(100vh - 60px)">
+      <div style="width: auto; border-right: 0px solid #ddd; min-height: calc(100vh - 60px)">
         <el-menu
             router
-            style="border: none"
+            style="border: none;margin-right: auto;"
             :default-active="$route.path"
             :default-openeds="['/home', '2']"
+            :collapse="isCollapse"
         >
+        <el-button type="primary" @click="toggleCollapse">折叠</el-button>
           <el-menu-item index="/home">
             <el-icon>
               <HomeFilled/>
@@ -132,7 +134,21 @@ export default {
       window.open("https://www.wjx.cn/vm/QmBulzI.aspx# ");
     },
   },
+  data() {
+            return {
+                isCollapse: false
+            }
+        },
+        
+methods: {
+    toggleCollapse () {
+        this.isCollapse = !this.isCollapse
+    }
+},
 };
+
+
+
 </script>
 
 
@@ -141,8 +157,6 @@ import {useRoute} from 'vue-router'
 
 const $route = useRoute()
 console.log($route.path)
-
-
 
 </script>
 

@@ -36,7 +36,7 @@
             :default-openeds="['/home', '2']"
             :collapse="isCollapse"
         >
-        <el-button type="primary" @click="toggleCollapse">折叠</el-button>
+        <el-button type="primary" @click="toggleCollapse" style="margin-top: 10px;align-content: center;">折叠</el-button>
           <el-menu-item index="/home">
             <el-icon>
               <HomeFilled/>

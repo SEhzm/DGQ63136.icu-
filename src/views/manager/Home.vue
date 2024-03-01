@@ -16,7 +16,7 @@
         <el-button type="primary" @click="getRandomItem" >点我随机一条弹幕</el-button>
         <el-table v-if="randomlySelectedItem" :data="[randomlySelectedItem]" style="font-family: 微软雅黑;font-size: 20px;">
           <el-table-column prop="barage" label="弹幕" ></el-table-column>
-          <el-table-column label="" align="center" width="160">
+          <el-table-column label="" align="center" width="85">
             <template #default="scope">
               <el-button type="primary" @click="copyText(scope.row.barage)">复制</el-button>
             </template>
@@ -38,7 +38,7 @@
         </el-input>
         <el-table v-if="searchQuery" :data="filteredItems" stripe>
           <el-table-column prop="barage" label="弹幕" display:none></el-table-column>
-          <el-table-column label="" align="center" width="160">
+          <el-table-column label="" align="center" width="85">
             <template #default="scope">
               <el-button type="primary" @click="copyText(scope.row.barage)">复制</el-button>
             </template>

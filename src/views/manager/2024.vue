@@ -4,7 +4,7 @@
       <el-table stripe :data="currentPageData" style="font-size: 18px;">
         <el-table-column type="index" width="60" label="序号" align="center"></el-table-column>
         <el-table-column prop="barrage" label="弹幕"></el-table-column>
-        <el-table-column label="" align="center" width="160">
+        <el-table-column label="" align="center" width="85">
           <template #default="scope">
             <el-button type="primary" @click="copyText(scope.row.barrage)">复制</el-button>
           </template>

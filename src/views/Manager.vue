@@ -186,6 +186,7 @@ console.log($route.path)
   left:30px;
   bottom:0px;
   height:50px;
+  
 }
 
 

@@ -184,7 +184,7 @@ console.log($route.path)
   display: inline-block;
   position:fixed;
   left:30px;
-  bottom:0px;
+  /*bottom:0px;*/
   height:50px;
   
 }

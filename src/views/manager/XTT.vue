@@ -90,6 +90,7 @@ const tableData = ref([
   {barrage: '你说的这些我都不懂 我就知道有个叫白坤华的自从那场nuke后 连人带连狙消失了'},
   {barrage: '"冬瓜强不要！那里太烫了！"不顾阿胖的惊恐哭泣，冬瓜强狞笑着把头伸进了烤箱变成了猪头"'},
   {barrage: '刘頔越大，刘頔越小，刘越大，所以頔越小，頔越小，所以刘越大，所以刘頔越大，刘頔越小'},
+  {barrage: '麒芳麒芳麒芳麒芳麒芳麒芳麒芳麒芳麒芳麒芳'},
 
 
 
@@ -137,6 +138,18 @@ const copyText = (text) => {
       });
 };
 
+
+</script>
+
+<script>
+//百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b9634ebcad194c62131c24600b2e1b10";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 
 </script>
 

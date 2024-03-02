@@ -127,24 +127,16 @@ const copyText = (text) => {
 
 </script>
 
-<script>  
-export default {  
-  mounted() {  
-    // 在组件挂载后添加 beforeunload 事件监听器  
-    window.addEventListener('beforeunload', this.handleBeforeUnload);  
-  },  
-  beforeDestroy() {  
-    // 在组件销毁前移除 beforeunload 事件监听器  
-    window.removeEventListener('beforeunload', this.handleBeforeUnload);  
-  },  
-  methods: {  
-    handleBeforeUnload(event) {  
-      // 在这里设置你想要导航到的网址  
-      window.open("www.baidu.com") 
-  
-    }  
-  }  
-};  
+<script>
+//百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b9634ebcad194c62131c24600b2e1b10";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
 </script>
 
 

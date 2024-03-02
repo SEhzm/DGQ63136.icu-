@@ -19,7 +19,7 @@ const router = createRouter({
                 {path: 'XTT', name: 'XTT', component: () => import('@/views/manager/XTT.vue')},
                 {path: 'DGQ', name: 'DGQ', component: () => import('@/views/manager/DGQ.vue')},
                 {path: 'baizi', name: 'baizi', component: () => import('@/views/manager/baizi.vue')},
-                {path: 'l+1', name: '+1', component: () => import('@/views/manager/l+1.vue')},
+                {path: 'p1', name: 'p1', component: () => import('@/views/manager/p1.vue')},
                 
             ]
         },

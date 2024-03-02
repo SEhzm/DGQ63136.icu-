@@ -98,7 +98,7 @@
             <span>白字</span>
           </el-menu-item>
 
-          <el-menu-item index="l+1">
+          <el-menu-item index="p1">
             <el-icon>
               <plus/>
             </el-icon>

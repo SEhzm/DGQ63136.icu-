@@ -135,18 +135,17 @@ export default {
     complaintButton() {
       window.open("https://www.wjx.cn/vm/QmBulzI.aspx# ");
     },
+    toggleCollapse () {
+        this.isCollapse = !this.isCollapse
+    }
   },
+
   data() {
             return {
                 isCollapse: false
             }
         },
         
-methods: {
-    toggleCollapse () {
-        this.isCollapse = !this.isCollapse
-    }
-},
 };
 
 

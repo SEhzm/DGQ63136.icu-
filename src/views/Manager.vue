@@ -72,12 +72,19 @@
             </el-menu-item>
           </el-sub-menu>
 
-          <el-menu-item index="/interesting"> 
+          <!-- <el-menu-item index="/interesting"> 
               <el-icon>
                 <Sugar/>
               </el-icon>
               <span>一些有趣的弹幕</span>
-            </el-menu-item>
+            </el-menu-item> -->
+
+          <el-menu-item index="p1">
+            <el-icon>
+              <plus/>
+            </el-icon>
+            <span>+1弹幕</span>
+          </el-menu-item>
 
           <el-menu-item index="/XTT">
             <el-icon>
@@ -98,12 +105,7 @@
             <span>白字</span>
           </el-menu-item>
 
-          <el-menu-item index="p1">
-            <el-icon>
-              <plus/>
-            </el-icon>
-            <span>+1弹幕</span>
-          </el-menu-item>
+
 
           <el-menu-item index="/QUQU">
               <img src="@/assets/imgs/Z.png" alt="Z!!" style="height: 18px;">

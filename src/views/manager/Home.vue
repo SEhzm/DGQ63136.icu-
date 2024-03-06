@@ -1,8 +1,8 @@
 <template>
-  <div><img src="@/assets/imgs/201.png" alt="DG举牌" class="DGjvpai">
+  <div><img src="@/assets/imgs/301.png" alt="DG举牌" class="DGjvpai">
     <div class="card" style="line-height: 30px">
       <div>
-      <b>2024年2月28日，恭喜LVG晋级major，季冬凯你是我爹！！</b></div>
+      <b style="margin-left:30px">今天是仿生人袁瑞斌生日，祝他生日快乐。<br>机械仿生人袁瑞斌 代号M3 根据你本次战役的“优良表现”请自觉前往报废站执行报废程序</b></div>
     </div>
 
     <div class="card" style="line-height: 30px; margin-top:8px ;"> 
@@ -13,7 +13,6 @@
 
     <div class="card" style="line-height: 50px ;margin-top: 8px;">
       <div>
-        <!-- <div class="button-table-container"><el-tag type="success">点击下面按钮随机弹幕</el-tag></div> -->
         <el-button type="primary" @click="getRandomItem" >点我随机一条弹幕</el-button>
         <el-table v-if="randomlySelectedItem" :data="[randomlySelectedItem]" style="font-family: 微软雅黑;font-size: 20px;">
           <el-table-column prop="barrage" label="弹幕" ></el-table-column>
@@ -378,8 +377,10 @@ export default {
         {id: 313, barrage: '三年我们TM等了三年啦JEE！三年！卧槽！呜呜呜呜呜呜呜！！！'},
         {id: 314, barrage: '你拿那么多子弹有什么用打的伤害还没你的子弹多呢'},
         {id: 315, barrage: '这个直播间氛围太好了，就像在恬静的乡下和邻里一起聊家长里短，偶尔还能听到后院的猪叫'},
-        
-
+        {id: 316, barrage: '考验眼力！ 从侏罗纪公园里找出冬瓜强！'},
+        {id: 317, barrage: '机械仿生人袁瑞斌 代号M3 根据你本次战役的“优良表现”请自觉前往报废站执行报废程序'},
+        {id: 318, barrage: '士兵2640出列！'},
+        {id: 319, barrage: '仿生机器人袁瑞斌 代号M3 几点开始执行刺杀任务？'},
   
       ],  
       randomlySelectedItem: null
@@ -449,7 +450,7 @@ const copyText = (text) => {
 <style>
 .DGjvpai{
   height: 200px;
-  margin-bottom: -23px;
+  margin-bottom: -41px;
 display:flex;
 align-items: center;
 }

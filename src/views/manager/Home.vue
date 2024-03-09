@@ -1,18 +1,24 @@
 <template>
-  <div><img src="@/assets/imgs/301.png" alt="DG举牌" class="DGjvpai">
+  <div><img src="@/assets/imgs/201.png" alt="DG举牌" class="DGjvpai">
+   
     <div class="card" style="line-height: 30px">
       <div>
-      <b style="margin-left:30px">今天是仿生人袁瑞斌生日，祝他生日快乐。<br>机械仿生人袁瑞斌 代号M3 根据你本次战役的“优良表现”请自觉前往报废站执行报废程序</b></div>
+      <b style="margin-left:25px">今天是冬瓜强生日，祝他生日快乐。<img src="@/assets/imgs/110.png" alt="捏狗头" class="dog_head"></b> </div>
+    </div>
+    <div class="card" style="line-height: 30px;margin-top: 10px;">
+    <div>
+      <b >鉴于流量，后续不定时更新。</b></div>
     </div>
 
     <div class="card" style="line-height: 30px; margin-top:8px ;"> 
-      <p>你好，各位白字。 <br>  
+      <p>你好，各位白字。 <br>  <img src="@/assets/imgs/130.png" alt="鸡毙你" class="biabiabia">
     这是一个收集厕所弹幕的网站: <span style="font-size: 24px; font-weight: bold; color: red;">DGQ63136.icu</span> <br>  
     请记住我！I see you~ <br>网站制作: <b>强哥咱跟她干吧</b></p>
     </div>
 
     <div class="card" style="line-height: 50px ;margin-top: 8px;">
       <div>
+        <!-- <div class="button-table-container"><el-tag type="success">点击下面按钮随机弹幕</el-tag></div> -->
         <el-button type="primary" @click="getRandomItem" >点我随机一条弹幕</el-button>
         <el-table v-if="randomlySelectedItem" :data="[randomlySelectedItem]" style="font-family: 微软雅黑;font-size: 20px;">
           <el-table-column prop="barrage" label="弹幕" ></el-table-column>
@@ -49,7 +55,7 @@
     </div>
 
     <div class="card" style="line-height: 100px ;margin-top: 8px; text-align: center;">
-      <a href="https://www.wjx.cn/vm/P9UjaRI.aspx# " target="_blank" style="font-size: 25px;">我有更好的弹幕！点击投稿！！</a>
+      <a href="https://www.wjx.cn/vm/P9UjaRI.aspx# " target="_blank" style="font-size: 25px;"> <img src="@/assets/imgs/120.png" alt="👍👍👍" class="good">我有更好的弹幕！点击投稿！！</a>
     </div>
 
   </div>
@@ -349,7 +355,7 @@ export default {
         {id: 285, barrage: '《是的，刘頔！》《对的，披頔！》《牛的，强頔！》 《卧槽里的，diyy！》'},
         {id: 286, barrage: '有些老哥还是放不开啊，别闷声不响搞得好像多有素质一样，看见啥比不骂就是危害社会'},
         {id: 287, barrage: '哥们你这直播是真好做，自己一副鳖孙脸往那一坐，等着弹幕自己刷烂梗就完事了'},
-        {id: 288, barrage: '不会真有那种从收藏夹里复制烂梗，然后眼巴巴的等着别人+1，加完自己嘿嘿笑的吧'},
+        {id: 288, barrage: '不会真有那种从dgq63136.icu里复制烂梗，然后眼巴巴的等着别人+1，加完自己嘿嘿笑的吧'},
         {id: 289, barrage: '一直刘頔烦不烦，一遍两遍刘頔差不多就得了，同意的刘頔'},
         {id: 290, barrage: '鱼越大，鱼刺越大，鱼刺越大，肉越少，肉越少，鱼越小，所以鱼越大，鱼越小'},
         {id: 291, barrage: '《我看刘頔三年了》《我真不知道这不能刘頔》《不能上刘頔我要憋死了》《求求了批高给我刘頔吧》'},
@@ -381,7 +387,17 @@ export default {
         {id: 317, barrage: '机械仿生人袁瑞斌 代号M3 根据你本次战役的“优良表现”请自觉前往报废站执行报废程序'},
         {id: 318, barrage: '士兵2640出列！'},
         {id: 319, barrage: '仿生机器人袁瑞斌 代号M3 几点开始执行刺杀任务？'},
+        {id: 320, barrage: '我捡到了两个鼻子🐽🔴,但是分不清哪个是你的了，你是啥鼻?'},
+        {id: 321, barrage: '哈基米🤪哈基米🤪哈基米🤪哈基米🤪哈基米🤪哈基米🤪哈基米🤪哈基米🤪哈基米🤪哈基米🤪'},
+        {id: 322, barrage: '呦西来了🇯🇵🐒🇯🇵🐒🇯🇵🐒🇯🇵🐒🇯🇵🐒🇯🇵🐒🇯🇵🐒'},
+        {id: 323, barrage: '😄你看，我把💧拿下来了，😅我又放回去了，😄我又拿下来了，我把💧拿下来了，😅我又放回去了'},
+        {id: 324, barrage: '《鼠标》《准心》《分辨率》《参数》《超频》《延迟》《挂》《空调》《灯光》《卧槽有蚊子》'},
+        {id: 325, barrage: '怕无归期，怕直升机，怕肘的不是你，怕没有焦比'},
+        {id: 326, barrage: '压缩到最后！♿涌出去！♿压缩到最后！♿涌出去！♿压缩到最后！♿涌出去！'},
+        {id: 327, barrage: '茄子切好放冰箱了，蛐蛐抓住关笼里了，机器停电关掉了，瓜哥你还有什么要求？'},
+        {id: 328, barrage: '小仙鸟丶QUQU：家人们谁懂啊！好看到跺jiojio的比赛竟然不叫人家一起看，简直是虾！头！'},
   
+
       ],  
       randomlySelectedItem: null
     };
@@ -407,13 +423,7 @@ export default {
 
 };
 
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b9634ebcad194c62131c24600b2e1b10";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+
 
 </script>
 
@@ -449,9 +459,29 @@ const copyText = (text) => {
 
 <style>
 .DGjvpai{
-  height: 200px;
-  margin-bottom: -41px;
-display:flex;
-align-items: center;
+  height: 100px;
+  margin-bottom: -11px;
+  display:flex;
+  align-items: center;
 }
+
+.dog_head{
+  margin-top: -10px;
+  height: 70px;
+  position: absolute;
+}
+
+.biabiabia{
+  margin-top: -56px;
+  height: 175px;
+  position: absolute;
+  margin-left: 400px;
+}
+.good{
+  margin-top: -56px;
+  height: 175px;
+  position: absolute;
+  margin-left: -200px;
+}
+
 </style>

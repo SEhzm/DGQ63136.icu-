@@ -57,6 +57,7 @@ const tableData = ref([
   {barrage: '如果是ququ的话一定会垫底roll把刀'},
   {barrage: '我在＃给主播请神 活动中请到了qu神，获得了神之赐z！dgq加冕为椰“Z”膏！你也来试试吧～'},
   {barrage: '嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟'},
+  {barrage: '小仙鸟丶QUQU：家人们谁懂啊！好看到跺jiojio的比赛竟然不叫人家一起看，简直是虾！头！'},
   
 
 
@@ -108,14 +109,6 @@ const copyText = (text) => {
 </script>
 
 <script>
-//百度统计
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b9634ebcad194c62131c24600b2e1b10";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
 
 </script>
 

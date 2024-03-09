@@ -6,8 +6,8 @@
         <div style="padding-left: 20px; display: flex; align-items: center">
 
           <a class="index-logo-text" href="https://www.douyu.com/63136" target="_blank" style="color: #ff552e;">
-            <img src="@/assets/imgs/logo.png" alt="大狗头" style="width: 35px ; margin-top: -1px">
-            DY63136共享厕纸
+            <img src="@/assets/imgs/111.png" alt="大狗头" style="width: 35px ; margin-top: -1px">
+            斗鱼63136弹幕收集
           </a>
           
           <div style="display: flex; justify-content: flex-end;margin-left: auto;">
@@ -187,7 +187,6 @@ console.log($route.path)
   left:30px;
   /*bottom:0px;*/
   height:50px;
-  
 }
 
 

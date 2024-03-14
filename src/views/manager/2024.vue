@@ -42,7 +42,7 @@ const tableData = ref([
   {barrage: '2024年1月10日23点29分  冬瓜强警长一刀带走五个好人 警钟长鸣'},
   {barrage: '2024年1月8日19：52冬瓜发誓再骂超哥就抽自己脸警钟长鸣'},
   {barrage: '2024年2月24日凌晨1:06分，冬瓜强和超哥拍摄《重生真妙》上中下三集，警钟长鸣'},
-
+  {barrage: '2024年3月10日0点19分 冬瓜强偷拿别人外卖 警钟长鸣'},
 
 
 ]);
@@ -93,14 +93,7 @@ const copyText = (text) => {
 </script>
 
 <script>
-//百度统计
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b9634ebcad194c62131c24600b2e1b10";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+
 
 </script>
 

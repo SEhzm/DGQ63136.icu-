@@ -1,6 +1,6 @@
 <template>
   <div><img src="@/assets/imgs/201.png" alt="DG举牌" class="DGjvpai">
-   
+    
     <div class="card" style="line-height: 30px">
       <div>
       <b style="margin-left:25px">今天是冬瓜强生日，祝他生日快乐。<img src="@/assets/imgs/110.png" alt="捏狗头" class="dog_head"></b> </div>
@@ -11,14 +11,14 @@
     </div>
 
     <div class="card" style="line-height: 30px; margin-top:8px ;"> 
-      <p>你好，各位白字。 <br>  <img src="@/assets/imgs/130.png" alt="鸡毙你" class="biabiabia">
-    这是一个收集厕所弹幕的网站: <span style="font-size: 24px; font-weight: bold; color: red;">DGQ63136.icu</span> <br>  
-    请记住我！I see you~ <br>网站制作: <b>强哥咱跟她干吧</b></p>
+      <p>你好，各位白字。 <br>  
+    这是一个收集厕所弹幕的网站: <span style="font-size: 24px; font-weight: bold; ">
+      <a href="https://dgq63136.icu" style="color: red;">DGQ63136.icu<img src="@/assets/imgs/130.png" alt="鸡毙你" class="biabiabia"></a></span>
+      <br>荆州的厕友，你投稿的6条弹幕很早之前已经加上去了哦</p>
     </div>
 
     <div class="card" style="line-height: 50px ;margin-top: 8px;">
       <div>
-        <!-- <div class="button-table-container"><el-tag type="success">点击下面按钮随机弹幕</el-tag></div> -->
         <el-button type="primary" @click="getRandomItem" >点我随机一条弹幕</el-button>
         <el-table v-if="randomlySelectedItem" :data="[randomlySelectedItem]" style="font-family: 微软雅黑;font-size: 20px;">
           <el-table-column prop="barrage" label="弹幕" ></el-table-column>
@@ -33,12 +33,11 @@
         </div>
       </div>
     </div>
-
     <div class="card" style="line-height: 50px ;margin-top: 10px ;margin-bottom: 10px; min-height: 120px;">
-      <div style="font-size: 80px;">
-              
-        <el-input v-model="searchQuery" placeholder="搜索弹幕..." style="font-size: 25px; margin-top: 28px;">
-          <template slot="append">
+      <div>
+        <span style="position: absolute;font-size: 30px;margin-top: -20px;color: blue ;">--------搜索在这，🦐吗---------</span>
+        <el-input v-model="searchQuery" placeholder="搜索弹幕..." style="font-size: 30px;margin-top: 30px;">
+          <template> 
             <el-button icon="el-icon-search"></el-button>
           </template>
         </el-input>
@@ -50,14 +49,12 @@
             </template>
           </el-table-column>
         </el-table>
-
       </div>
     </div>
-
     <div class="card" style="line-height: 100px ;margin-top: 8px; text-align: center;">
+      
       <a href="https://www.wjx.cn/vm/P9UjaRI.aspx# " target="_blank" style="font-size: 25px;"> <img src="@/assets/imgs/120.png" alt="👍👍👍" class="good">我有更好的弹幕！点击投稿！！</a>
     </div>
-
   </div>
 </template>
 
@@ -396,6 +393,16 @@ export default {
         {id: 326, barrage: '压缩到最后！♿涌出去！♿压缩到最后！♿涌出去！♿压缩到最后！♿涌出去！'},
         {id: 327, barrage: '茄子切好放冰箱了，蛐蛐抓住关笼里了，机器停电关掉了，瓜哥你还有什么要求？'},
         {id: 328, barrage: '小仙鸟丶QUQU：家人们谁懂啊！好看到跺jiojio的比赛竟然不叫人家一起看，简直是虾！头！'},
+        {id: 329, barrage: '2024年3月10日0点19分 冬瓜强偷拿别人外卖 警钟长鸣'},
+        {id: 330, barrage: '塔斯汀余姚万达店：你要点KFC能不能打个电话说一声，老子也能早点下班'},
+        {id: 331, barrage: '吸血 抗压 垫底 你和卫生巾的唯一区别就是没有B用'},
+        {id: 332, barrage: '@吴尚泽123:强叔，我爸爸去带货了，你怎么没有一起去？'},
+        {id: 333, barrage: '队友强 我就强 队友似虎我似狼 队友弱 我就弱 被人干到小角落'},
+        {id: 334, barrage: '不是兄弟，我们+1是收了钱了，帮主播刷数据，你们没收钱还+1是什么意思'},
+        {id: 335, barrage: '牢大挂着你直播间睡觉了 你搞耍可以 但是不要突然大喊大叫 惊了牢大睡觉就肘你 听到没有？'},
+        {id: 336, barrage: '呦西在替补席还能看到他脸，我在你直播间连脸都看不到，你比呦西还牛逼'},
+        {id: 337, barrage: '真的离谱，我花我的时间，我的手机，我的电费，我的网费，看你直播，还要我给你送礼物？'},
+        {id: 338, barrage: '【米哈游】验证码：63136（10分钟内有效）。您正在登录米哈游通行证，请勿将验证码发送他人。'},
   
 
       ],  
@@ -422,8 +429,6 @@ export default {
   }
 
 };
-
-
 
 </script>
 
@@ -454,7 +459,6 @@ const copyText = (text) => {
       });
 };
 
-
 </script>
 
 <style>
@@ -473,9 +477,9 @@ const copyText = (text) => {
 
 .biabiabia{
   margin-top: -56px;
-  height: 175px;
+  height: 145px;
   position: absolute;
-  margin-left: 400px;
+  margin-left: 10px;
 }
 .good{
   margin-top: -56px;

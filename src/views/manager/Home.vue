@@ -3,18 +3,20 @@
     
     <div class="card" style="line-height: 30px">
       <div>
-      <b style="margin-left:25px">今天是冬瓜强生日，祝他生日快乐。<img src="@/assets/imgs/110.png" alt="捏狗头" class="dog_head"></b> </div>
-    </div>
+        
+        <b style="margin-left:25px;font-size:27px;color:red;">🏮🏮🏮🏮2024年3月26日下午15:12，恭喜丢丢出生。🏮🏮🏮🏮
+          <br>距离丢丢高考还有{{ diudiugaokao }}天<img src="@/assets/imgs/110.png" alt="捏狗头" class="dog_head"></b> </div>
+      
+        </div>
     <div class="card" style="line-height: 30px;margin-top: 10px;">
-    <div>
-      <b >鉴于流量，后续不定时更新。</b></div>
+    <div><b>鉴于流量，后续不定时更新。</b></div>
     </div>
 
     <div class="card" style="line-height: 30px; margin-top:8px ;"> 
       <p>你好，各位白字。 <br>  
     这是一个收集厕所弹幕的网站: <span style="font-size: 24px; font-weight: bold; ">
       <a href="https://dgq63136.icu" style="color: red;">DGQ63136.icu<img src="@/assets/imgs/130.png" alt="鸡毙你" class="biabiabia"></a></span>
-      <br>荆州的厕友，你投稿的6条弹幕很早之前已经加上去了哦</p>
+      <br> </p>
     </div>
 
     <div class="card" style="line-height: 50px ;margin-top: 8px;">
@@ -403,11 +405,48 @@ export default {
         {id: 336, barrage: '呦西在替补席还能看到他脸，我在你直播间连脸都看不到，你比呦西还牛逼'},
         {id: 337, barrage: '真的离谱，我花我的时间，我的手机，我的电费，我的网费，看你直播，还要我给你送礼物？'},
         {id: 338, barrage: '【米哈游】验证码：63136（10分钟内有效）。您正在登录米哈游通行证，请勿将验证码发送他人。'},
-  
+        {id: 339, barrage: '我 頔 马 呀！我 頔 马 呀！我 頔 马 呀！我 頔 马 呀！我 頔 马 呀！我 頔 马 呀！我 頔 马 呀！我 頔 马 呀！'},
+        {id: 340, barrage: '我 頔 马 🐎呀！我 頔 马🐎呀！我 頔 马🐎呀！我 頔 马🐎呀！'},
+        {id: 341, barrage: 'MD，我真受不了了，能不能给这超哥弄个AI变声器，天天啊啊嗷嗷的还喘'},
+        {id: 342, barrage: '能谤讥于弹幕，闻寡人之耳者，7天，鱼吧发帖谏寡人者，30天，高能弹幕面刺寡人者，360'},
+        {id: 343, barrage: 'dgq我们回圈吧🏃‍——🐖，快和大家说再见   dgq我们回圈吧🏃‍——🐖，快和大家说再见'},
+        {id: 344, barrage: '👇🤓👆康康驾到👇🤓👆通通闪开👇🤓👆'},
+        {id: 345, barrage: 'ququ助理👩 小鬼助理👧 mo队助理👸 冬瓜助理🤓'},
+        {id: 346, barrage: '强~哥🥰强~哥🥰强~哥🥰强~哥🥰强~哥🥰强~哥🥰强~哥🥰强~哥🥰强~哥🥰'},
+        {id: 347, barrage: '《ephorse大杀四方》《faceit亚洲第一》《斗鱼ju神》《泪撒印尼》《15:0》《0.17》'},
+        {id: 348, barrage: '高爷我们63136所有彩字和白字都支持你反了！'},
+        {id: 359, barrage: '@钻粉十级牌进群私信我：我看啊，明天不光我失业了，你也快强哥'},
+        {id: 350, barrage: '蛐蛐助理👰🏻 刘珂助理:🧝🏻‍♀️小鬼助理:👩🏼‍⚕️ 冬瓜助理:🤓🥴🤧'},
+        {id: 351, barrage: '2024年3月14日22：37分冬瓜强踩在ququ的头上！瓜派胜利！！'},
+        {id: 352, barrage: '深夜饿了打开美团，以为已经没有骑手了。没想到打电话给店家老板答复说：有的，瓜强还在送'},
+        {id: 353, barrage: '科比来了👷🏿科比又走了🚁科比来了👷🏿科比又走了🚁科比来了👷🏿科比又走了🚁'},
+        {id: 354, barrage: 'LQ解散的真正原因（多选题）S：椰汁糕 B：冬瓜 D：冬瓜强 G：椰汁糕冬瓜强'},
+        {id: 355, barrage: '玉溪市税务局： 已经受理您对【袁瑞斌】的举报，后续结果将通过短信通知，感谢您的监督'},
+        {id: 356, barrage: '我问大师冬瓜强在队内的作用，大师指了指自己的子，我:有但不明显？大师:没B用..'},
+        {id: 357, barrage: '呼，瓜酱の笑颜、就算是我这样「卑·微」の肥宅，也想要一直守护！欺负瓜酱的事情、是绝对——达咩哟！'},
+        {id: 358, barrage: '人越多，广告越大，广告越大，越看不清，越看不清，人越少，所以人越多，人越少'},
+        {id: 359, barrage: '我在#狂骂茄子 活动中骂了冬瓜强10分钟，获得《哭错坟了》称号，赶快来参与吧！'},
+        {id: 360, barrage: '我在美团外卖上使用“狂鸟、QUQU”教学的单向烟，成功在保安室偷到体育生外卖一份，你也快来试试吧！'},
+        {id: 361, barrage: '自从森破原谅冬瓜回来直播之后直播间里都没片总了'},
+        {id: 362, barrage: '时间在流逝，队友在观看，枪法在变形，思路在紊乱，对手在哪里？我该怎么办？'},
+        {id: 362, barrage: '斗鱼真是越来越难用了，我明明调的最大亮度，主播的操作还是让我两眼一黑'},
+        {id: 363, barrage: '还隔着直播呢？香克斯又得到了一块历史正文，离海贼王更近了，说带你一起呢，巴基船长'},
+        {id: 364, barrage: '梅西热身赛都不上场的，你热身赛猛杀，看来你才是球王啊'},
+        {id: 365, barrage: '⚡电⚡死⚡sb⚡刘⚡頔⚡，⚡頔⚡頔⚡頔⚡頔⚡頔⚡頔⚡頔⚡頔⚡'},
+        {id: 366, barrage: '我 頔 马 🐎 🦆!我 頔 马 🐎 🦆!我 頔 马 🐎 🦆!我 頔 马 🐎 🦆!我 頔 马 🐎 🦆!我 頔 马 🐎 🦆!我 頔 马 🐎 🦆!'},
+        {id: 367, barrage: '老子挂刘頔睡觉了，你刘頔可以，但是不要突然大刘大頔，惊了老子刘頔就喷你，听到没有'},
+        {id: 368, barrage: '诗圣——杜甫、词圣——苏轼，茶圣——陆羽，酒圣——杜康，书圣——王羲之，畜圣——我頔🐎🦷'},
+        {id: 369, barrage: '刘迪是热情;刘迪是纯洁;刘迪是庄重;刘迪是神秘;刘迪是喜欢;刘迪是你跌'},
+        {id: 370, barrage: '线下，0-7全负战绩。就在苏州。不知廉耻!刘易博'},
 
       ],  
-      randomlySelectedItem: null
+      randomlySelectedItem: null,
+      targetDate: new Date('2041-06-07'),
+
     };
+    
+      
+
   },
   methods: {
     getRandomItem() {
@@ -425,8 +464,15 @@ export default {
       return this.searchQuery ? this.items.filter(item =>
           item.barrage.toLowerCase().includes(this.searchQuery.toLowerCase())
       ) : [];
-    }
-  }
+    },
+    diudiugaokao() {  
+      const now = new Date();  
+      const diffTime = this.targetDate - now;  
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));  
+      return diffDays;  
+    },  
+  },
+  
 
 };
 
@@ -477,7 +523,7 @@ const copyText = (text) => {
 
 .biabiabia{
   margin-top: -56px;
-  height: 145px;
+  height: 115px;
   position: absolute;
   margin-left: 10px;
 }

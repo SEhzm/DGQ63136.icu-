@@ -6,14 +6,13 @@
 
         <b style="margin-left:25px;font-size:27px;color:red;">🏮🏮🏮🏮2024年3月26日下午15:12，恭喜丢丢出生。🏮🏮🏮🏮
           <br>距离丢丢高考还有{{ diudiugaokao }}天
-          <br>距离HHJ貂蝉2.5分一周年还有{{ DaoJiShi }}天，警钟长鸣！
-          <img src="https://pic.imgdb.cn/item/6607ee8f9f345e8d03ae39d8.png" alt="捏狗头"
-            class="dog_head"></b>
+          <br>距离冬瓜超哥刘頔钙奶马飞 瓦0：13 一周年还有{{ DaoJiShi }}天，警钟长鸣！
+          <img src="https://pic.imgdb.cn/item/6607ee8f9f345e8d03ae39d8.png" alt="捏狗头" class="dog_head"></b>
       </div>
 
     </div>
     <div class="card" style="line-height: 30px;margin-top: 10px;">
-      <div><b>鉴于流量，后续不定时更新。</b></div>
+      <div><b>鉴于流量，后续不定时更新。<em style="font-size: 17px;color: red;">新增时光相册2015年-2024年</em></b></div>
     </div>
 
     <div class="card" style="line-height: 30px; margin-top:8px ;">
@@ -61,9 +60,11 @@
       </div>
     </div>
     <div class="card" style="line-height: 100px ;margin-top: 8px; text-align: center;">
-
       <a href="https://www.wjx.cn/vm/P9UjaRI.aspx# " target="_blank" style="font-size: 25px;"> <img
           src="https://pic.imgdb.cn/item/6607ee909f345e8d03ae3cc1.png" alt="👍👍👍" class="good">我有更好的弹幕！点击投稿！！</a>
+    </div>
+    <div style="text-align: center;font-size: 17px;margin-left: -250px;">
+      <a href="https://beian.miit.gov.cn/" target="_blank">本网站基于腾讯云服务器搭建&nbsp;&nbsp;&nbsp;&nbsp; Copyright © 2024桂ICP备2024022150号</a>
     </div>
   </div>
 </template>
@@ -457,15 +458,21 @@ export default {
         { id: 379, barrage: '请主播克制自己激动的情绪，你现在是在直播，不是在看门！请勿出现咧嘴撕咬吼叫的行为！' },
         { id: 380, barrage: '还能再见吗麒芳！再见的时候要幸福啊，麒芳…麒芳…麒芳…' },
         { id: 381, barrage: '大狗强 你忘了七星爆的击喉感了吗？你忘了尼古丁盘旋的放松感了吗？你忘了一根抽完的意犹未尽了吗' },
-        { id: 381, barrage: '最后警告一下直播间里的小萌妹，集美，女大还有姨，再发一条弹幕我立刻在脑子里把你们那个了' },
-        { id: 381, barrage: '2024年4月18天禄小菊在nuke拿下0.05rating超越一代传奇冬瓜' },
-        { id: 381, barrage: '我再讲一下工作分配，富哥们节奏骑脸。穷哥们＋1跟上，房管帮忙解封掩护。听懂了就+1' },
-        { id: 381, barrage: '诞生于1987，故乡是日本东京，名字叫里奥哟西，喜欢打激素的男孩，偷窃是他的王牌' },
-        { id: 381, barrage: '看主播真的能学到意识的，比如我现在就意识到主播是个没用的东西' },
+        { id: 382, barrage: '最后警告一下直播间里的小萌妹，集美，女大还有姨，再发一条弹幕我立刻在脑子里把你们那个了' },
+        { id: 383, barrage: '2024年4月18天禄小菊在nuke拿下0.05rating超越一代传奇冬瓜' },
+        { id: 384, barrage: '我再讲一下工作分配，富哥们节奏骑脸。穷哥们＋1跟上，房管帮忙解封掩护。听懂了就+1' },
+        { id: 385, barrage: '诞生于1987，故乡是日本东京，名字叫里奥哟西，喜欢打激素的男孩，偷窃是他的王牌' },
+        { id: 386, barrage: '看主播真的能学到意识的，比如我现在就意识到主播是个没用的东西' },
+        { id: 387, barrage: '分析头头是道，实战把把被爆，这把状态不好，下把不开玩笑' },
+        { id: 388, barrage: '杀人最少，年龄最老，对枪就倒，摄像头关，把烟抽饱，关麦B叨，开麦喊好' },
+        { id: 389, barrage: '其实真正懂cs的人都知道懂cs的人懂cs 但是没办法 懂cs的人太懂cs了' },
+        { id: 390, barrage: '新来观众介绍一下，右下角是四分五裂果实能力者，马戏团的表演家，小丑巴基的兄弟小丑基巴 娆春乔的狗' },
+        { id: 391, barrage: '没办法，不知道，不清楚，没想到，没注意，关键是，主要是，本来我，如果说，我以为。' },
+        { id: 392, barrage: '唉……不是……你……算了……无所谓了……加油吧' },
       ],
       randomlySelectedItem: null,
       targetDate: new Date('2041-06-07'),
-      DaoJiShiDate: new Date('2024-05-07'),
+      DaoJiShiDate: new Date('2024-06-29'),
 
     };
 
@@ -495,7 +502,7 @@ export default {
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       return diffDays;
     },
-    DaoJiShi(){
+    DaoJiShi() {
       const now1 = new Date();
       const TimeGap = this.DaoJiShiDate - now1;
       const DJS_Date = Math.ceil(TimeGap / (1000 * 60 * 60 * 24));
@@ -559,7 +566,7 @@ const copyText = (text) => {
 }
 
 .good {
-  margin-top: -56px;
+  margin-top: -61px;
   height: 175px;
   position: absolute;
   margin-left: -200px;

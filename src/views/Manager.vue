@@ -24,11 +24,11 @@
                 style="margin-right: 15px;">
             </a> -->
             <div class="demo-image__preview">
-              <el-image style="width: 30px; height: 30px;margin-right: 15px" :src="url" :zoom-rate="1.2" :max-scale="7"
+              <el-image style="width: 30px; height: 30px;margin-right: 15px" :src="url" :zoom-rate="1.2" :max-scale="7" lazy
                 :min-scale="0.2" :preview-src-list="['zfb.jpg']" :initial-index="4" fit="cover" />
             </div>
             <div class="demo-image__preview">
-              <el-image style="width: 30px; height: 30px;margin-right: 15px;border-radius: 5px;" :src="wxurl" :zoom-rate="1.2"
+              <el-image style="width: 30px; height: 30px;margin-right: 15px;border-radius: 5px;" :src="wxurl" :zoom-rate="1.2" lazy
                 :max-scale="7" :min-scale="0.2" :preview-src-list="['wx.jpg']" :initial-index="4" fit="cover" />
             </div>
           </div>

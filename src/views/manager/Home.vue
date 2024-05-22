@@ -63,7 +63,7 @@
           src="https://pic.imgdb.cn/item/6607ee909f345e8d03ae3cc1.png" alt="👍👍👍" class="good">我有更好的弹幕！点击投稿！！</a>
     </div>
     <div style="text-align: center;font-size: 17px;margin-left: -250px;">
-      <a href="https://beian.miit.gov.cn/" target="_blank">本网站基于腾讯云服务器搭建&nbsp;&nbsp;&nbsp;&nbsp; Copyright © 2024桂ICP备2024022150号</a>
+      <a href="https://beian.miit.gov.cn/" target="_blank">本网站基于腾讯云服务器搭建&nbsp;&nbsp;&nbsp;&nbsp; Copyright © 2024 桂ICP备2024022150号</a>
     </div>
   </div>
 </template>

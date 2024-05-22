@@ -20,6 +20,8 @@ const router = createRouter({
                 {path: 'DGQ', name: 'DGQ', component: () => import('@/views/manager/DGQ.vue')},
                 {path: 'baizi', name: 'baizi', component: () => import('@/views/manager/baizi.vue')},
                 {path: 'p1', name: 'p1', component: () => import('@/views/manager/p1.vue')},
+                {path: 'ruibin', name: 'ruibin', component: () => import('@/views/manager/ruibin.vue')},
+                {path: 'image', name: 'image', component: () => import('@/views/manager/image.vue')},
                 
             ]
         },

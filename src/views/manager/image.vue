@@ -1,7 +1,7 @@
 <template>
   <div class="outer">
     <span>时光相册</span>
-    <em style="font-size: 10px;">如侵权，请右上角联系删除</em>
+    <em style="font-size: 14px;">如侵权，请右上角联系删除</em>
   </div>
   <div style="display: flex; flex-wrap: wrap; width: 100%; padding: 3%; box-sizing: border-box;">
     <div v-for="(fit) in outerImg" :key="fit.index" class="image-block" style="margin-right: -20px;margin-bottom: 2%;"

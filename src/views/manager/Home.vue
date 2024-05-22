@@ -3,7 +3,6 @@
 
     <div class="card" style="line-height: 30px">
       <div>
-
         <b style="margin-left:25px;font-size:27px;color:red;">🏮🏮🏮🏮2024年3月26日下午15:12，恭喜丢丢出生。🏮🏮🏮🏮
           <br>距离丢丢高考还有{{ diudiugaokao }}天
           <br>距离冬瓜超哥刘頔钙奶马飞 瓦0：13 一周年还有{{ DaoJiShi }}天，警钟长鸣！

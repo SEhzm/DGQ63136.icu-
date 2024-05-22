@@ -25,7 +25,7 @@
             </a> -->
             <div class="demo-image__preview">
               <el-image style="width: 30px; height: 30px;margin-right: 15px" :src="url" :zoom-rate="1.2" :max-scale="7"
-                :min-scale="0.2" :preview-src-list="srcList" :initial-index="4" fit="cover" />
+                :min-scale="0.2" :preview-src-list="['zfb.jpg']" :initial-index="4" fit="cover" />
             </div>
           </div>
         </div>
@@ -38,11 +38,19 @@
           :default-openeds="['/home', '2']" :collapse="isCollapse">
           <el-button type="primary" @click="toggleCollapse"
             style="margin-top: 10px;align-content: center;">折叠</el-button>
+
           <el-menu-item index="/home">
             <el-icon>
               <HomeFilled />
             </el-icon>
             <span>首页</span>
+          </el-menu-item>
+
+          <el-menu-item index="/image">
+            <el-icon>
+              <Camera />
+            </el-icon>
+            <span>时光相册</span>
           </el-menu-item>
 
           <el-sub-menu index="2">
@@ -168,8 +176,6 @@ const $route = useRoute()
 console.log($route.path)
 const url =
   'https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico';
-const srcList = [
-  'https://download-cdn.123pan.cn/123-404/0f664c49/1827596653-0/0f664c494863b4a6f83564fc695a8594/c-m27?v=5&t=1714446467&s=17144464678ba622392c50a8d4e9ada9c9c58c5c82&r=99QGP2&bzc=1&bzs=0&filename=%E7%82%B9%E5%87%BB%E5%9B%BE%E7%89%87%E5%B0%B1%E8%83%BD%E6%94%BE%E5%A4%A7%EF%BC%8C%E8%B0%A2%E8%B0%A2%E6%82%A8%E6%94%AF%E6%8C%81%EF%BC%81.jpg&cache_type=1',]
 </script>
 
 <style scoped>

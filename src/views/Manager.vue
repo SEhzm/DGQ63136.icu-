@@ -27,6 +27,10 @@
               <el-image style="width: 30px; height: 30px;margin-right: 15px" :src="url" :zoom-rate="1.2" :max-scale="7"
                 :min-scale="0.2" :preview-src-list="['zfb.jpg']" :initial-index="4" fit="cover" />
             </div>
+            <div class="demo-image__preview">
+              <el-image style="width: 30px; height: 30px;margin-right: 15px;border-radius: 5px;" :src="wxurl" :zoom-rate="1.2"
+                :max-scale="7" :min-scale="0.2" :preview-src-list="['wx.jpg']" :initial-index="4" fit="cover" />
+            </div>
           </div>
         </div>
       </div>
@@ -176,6 +180,7 @@ const $route = useRoute()
 console.log($route.path)
 const url =
   'https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico';
+const wxurl = 'https://newres.wechat.com/t/fed_upload/08b92997-2415-408f-b706-442ed4ede518/OTE0YTAw.png';
 </script>
 
 <style scoped>

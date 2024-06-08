@@ -9,6 +9,10 @@ import java.util.List;
 
 @Mapper
 public interface WebMapper {
+
+    @Select("SELECT barrage FROM J2022 UNION all SELECT barrage FROM J2023 UNION all SELECT barrage FROM J2024")
+    List<Barrage> JZCMPage();
+
     @Select("select * from j2022 order by barrage desc ")
     List<Barrage> J2022Page();
 
@@ -35,4 +39,6 @@ public interface WebMapper {
 
     @Select("select * from QUQU order by barrage desc ")
     List<Barrage> QUQUPage();
+
+
 }

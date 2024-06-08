@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import {ref, reactive} from 'vue'
+import {reactive} from 'vue'
 import request from "@/utils/request";
 import {ElMessage} from 'element-plus'
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px ">
-      <el-table stripe :data="currentPageData" style="font-size: 18px;">
+      <el-table stripe :data="data.tableData" style="font-size: 18px;">
         <el-table-column type="index" width="60" label="序号" align="center"></el-table-column>
         <el-table-column prop="barrage" label="弹幕"></el-table-column>
         <el-table-column label="" align="center" width="85">
@@ -18,8 +18,8 @@
         <el-pagination
             background
             layout="prev, pager, next, jumper"
-            :total="tableData.length"
-            :page-size="pageSize"
+            :total="data.total"
+            :page-size="data.pageSize"
             @current-change="handlePageChange"
         ></el-pagination>
       </div>
@@ -29,38 +29,38 @@
 </template>
 
 <script setup>
-import {ref, computed} from 'vue';
+import {ref, reactive} from 'vue'
 import request from "@/utils/request";
 import {ElMessage} from 'element-plus'
 
-request.get('/').then(res => {
-  console.log(res)
+const data = reactive({
+  tableData: [],
+  total: 0,
+  pageSize: 15,
+  currentPage: 1,
 })
-//原始数据
-const tableData = ref([
 
-  {barrage: '2022年11月16日晚20:40分冬瓜强5EPL0.17rating'},
-  
-  
+const load = (pageNum = 1) => {
+  request.get('/J2022/Page', {
+    params: {
+      pageNum: pageNum,
+      pageSize: data.pageSize
+    }
+  }).then(res => {
+    // console.log(res)
+    data.tableData = res.data?.list || []
+    data.total = res.data?.total || 0
+  }).catch(err => {
+    console.error('加载数据失败:', err)
+  })
+}
 
-]);
+load(data.currentPage)
 
-// 每页显示的数据量
-const pageSize = ref(15);
-// 当前页码
-const currentPage = ref(1);
-// 计算当前页应该显示的数据
-const currentPageData = computed(() => {
-  const start = (currentPage.value - 1) * pageSize.value;
-  const end = start + pageSize.value;
-  return tableData.value.slice(start, end);
-});
-
-// 处理页码改变的事件
-const handlePageChange = (newPage) => {
-  currentPage.value = newPage;
-};
-
+const handlePageChange = (page) => {
+  data.currentPage = page
+  load(page)
+}
 
 const open2 = () => {
   ElMessage({

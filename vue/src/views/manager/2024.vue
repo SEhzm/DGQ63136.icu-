@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px ">
-      <el-table stripe :data="currentPageData" style="font-size: 18px;">
+      <el-table stripe :data="data.tableData" style="font-size: 18px;">
         <el-table-column type="index" width="60" label="序号" align="center"></el-table-column>
         <el-table-column prop="barrage" label="弹幕"></el-table-column>
         <el-table-column label="" align="center" width="85">
@@ -18,8 +18,8 @@
         <el-pagination
             background
             layout="prev, pager, next, jumper"
-            :total="tableData.length"
-            :page-size="pageSize"
+            :total="data.total"
+            :page-size="data.pageSize"
             @current-change="handlePageChange"
         ></el-pagination>
       </div>
@@ -29,45 +29,38 @@
 </template>
 
 <script setup>
-import {ref, computed} from 'vue';
+import {reactive} from 'vue'
 import request from "@/utils/request";
 import {ElMessage} from 'element-plus'
 
-request.get('/').then(res => {
-  console.log(res)
+const data = reactive({
+  tableData: [],
+  total: 0,
+  pageSize: 15,
+  currentPage: 1,
 })
-//原始数据
-const tableData = ref([
 
-  {barrage: '2024年1月10日23点29分  冬瓜强警长一刀带走五个好人 警钟长鸣'},
-  {barrage: '2024年1月8日19：52冬瓜发誓再骂超哥就抽自己脸警钟长鸣'},
-  {barrage: '2024年2月24日凌晨1:06分，冬瓜强和超哥拍摄《重生真妙》上中下三集，警钟长鸣'},
-  {barrage: '2024年3月10日0点19分 冬瓜强偷拿别人外卖 警钟长鸣'},
-  {barrage: '2024年3月14日22：37分冬瓜强踩在ququ的头上！瓜派胜利！！'},
-  {barrage: '2024年4月18天禄小菊在nuke拿下0.05rating超越一代传奇冬瓜'},
-  {barrage: '2024年5月15日 4：19，刘頔阿乐大强被伏地魔一雷三响，警钟长鸣'},
-  {barrage: 'Mao于2024年5月19日02：23在PL荒漠迷城砍下0.16恐怖rating，超越冬瓜，警钟长鸣'},
+const load = (pageNum = 1) => {
+  request.get('/J2024/Page', {
+    params: {
+      pageNum: pageNum,
+      pageSize: data.pageSize
+    }
+  }).then(res => {
+    // console.log(res)
+    data.tableData = res.data?.list || []
+    data.total = res.data?.total || 0
+  }).catch(err => {
+    console.error('加载数据失败:', err)
+  })
+}
 
+load(data.currentPage)
 
-]);
-
-// 每页显示的数据量
-const pageSize = ref(15);
-// 当前页码
-const currentPage = ref(1);
-// 计算当前页应该显示的数据
-const currentPageData = computed(() => {
-  const start = (currentPage.value - 1) * pageSize.value;
-  const end = start + pageSize.value;
-  return tableData.value.slice(start, end);
-});
-
-// 处理页码改变的事件
-const handlePageChange = (newPage) => {
-  currentPage.value = newPage;
-};
-
-
+const handlePageChange = (page) => {
+  data.currentPage = page
+  load(page)
+}
 const open2 = () => {
   ElMessage({
     message: '复制成功',
@@ -82,12 +75,12 @@ const open4 = () => {
 const copyText = (text) => {
   navigator.clipboard.writeText(text)
       .then(() => {
-        // 复制成功，可以显示提示信息  
+        // 复制成功，可以显示提示信息
         open2();
         console.log('内容已复制到剪贴板');
       })
       .catch((err) => {
-        // 复制失败，可以显示错误信息  
+        // 复制失败，可以显示错误信息
         console.error('复制失败:', err);
         open4()
       });
@@ -97,7 +90,6 @@ const copyText = (text) => {
 </script>
 
 <script>
-
 
 </script>
 

@@ -20,7 +20,9 @@ public class WebServiceImpl implements WebService {
 
     @Override
     public PageInfo<Barrage> JZCMPage(Integer pageNum, Integer pageSize) {
-        return null;
+        PageHelper.startPage(pageNum,pageSize);
+        List<Barrage> barrageList = webMapper.JZCMPage();
+        return PageInfo.of(barrageList);
     }
 
     @Override

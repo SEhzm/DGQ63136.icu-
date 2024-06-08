@@ -17,6 +17,7 @@ public class WebController {
     private WebService webService;
 
 
+
     @GetMapping("/JZCM/Page")
     public Result JZCM(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
@@ -27,7 +28,7 @@ public class WebController {
         return Result.success(pageInfo);
     }
 
-    @GetMapping("/2022/Page")
+    @GetMapping("/J2022/Page")
     public Result JZCM2022(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
@@ -37,7 +38,7 @@ public class WebController {
         return Result.success(pageInfo);
     }
 
-    @GetMapping("/2023/Page")
+    @GetMapping("/J2023/Page")
     public Result JZCM2023(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
@@ -47,7 +48,7 @@ public class WebController {
         return Result.success(pageInfo);
     }
 
-    @GetMapping("/2024/Page")
+    @GetMapping("/J2024/Page")
     public Result JZCM2024(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 

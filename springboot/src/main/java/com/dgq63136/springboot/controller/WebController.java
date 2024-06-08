@@ -17,7 +17,6 @@ public class WebController {
     private WebService webService;
 
 
-
     @GetMapping("/JZCM/Page")
     public Result JZCM(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){

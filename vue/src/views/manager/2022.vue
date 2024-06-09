@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px ">
-      <el-table stripe :data="data.tableData" style="font-size: 18px;">
+      <el-table stripe :data="data.tableData" empty-text="我还没有加载完喔~~" style="font-size: 18px;">
         <el-table-column type="index" width="60" label="序号" align="center"></el-table-column>
         <el-table-column prop="barrage" label="弹幕"></el-table-column>
         <el-table-column label="" align="center" width="85">
@@ -23,7 +23,6 @@
             @current-change="handlePageChange"
         ></el-pagination>
       </div>
-      <div class="pagination-text">--------最新弹幕在后面的页号中---------</div>
     </div>
   </div>
 </template>

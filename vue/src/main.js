@@ -26,12 +26,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
 
-import AV from 'leancloud-storage';
-
-const appId = 'G8sstSnHYpUQ8Lj1Y8BRHHb7-MdYXbMMI';
-const appKey = '1NOhe8Diw2jD9xzrPHv3r386';
-AV.init({ appId, appKey });
-
 
 
 //百度统计API

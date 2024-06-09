@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Barrage {
+    private String Columns;
     private String barrage;
-
 }

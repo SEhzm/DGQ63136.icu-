@@ -48,6 +48,7 @@ const load = (pageNum = 1) => {
     // console.log(res)
     data.tableData = res.data?.list || []
     data.total = res.data?.total || 0
+    console.log(data.tableData)
   }).catch(err => {
     console.error('加载数据失败:', err)
   })

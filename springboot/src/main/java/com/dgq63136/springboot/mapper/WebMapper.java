@@ -40,5 +40,6 @@ public interface WebMapper {
     @Select("select barrage from QUQU order by id desc ")
     List<Barrage> QUQUPage();
 
-
+    @Select("select barrage from allbarrage")
+    List<Barrage> allPage();
 }

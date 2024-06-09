@@ -3,6 +3,8 @@ package com.dgq63136.springboot.service;
 import com.dgq63136.springboot.entity.Barrage;
 import com.github.pagehelper.PageInfo;
 
+import java.util.List;
+
 public interface WebService {
 
     PageInfo<Barrage> JZCMPage(Integer pageNum, Integer pageSize);
@@ -25,4 +27,5 @@ public interface WebService {
 
     PageInfo<Barrage> QUQUPage(Integer pageNum, Integer pageSize);
 
+    List<Barrage> allPage();
 }

@@ -69,88 +69,47 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      searchQuery: '',
-      randomlySelectedItem: null,
-      targetDate: new Date('2041-06-07'),
-      DaoJiShiDate: new Date('2024-06-29'),
-
-    };
-
-  },
-  methods: {
-    getRandomItem() {
-      if (this.items.length > 0) {
-        const randomIndex = Math.floor(Math.random() * this.items.length);
-        this.randomlySelectedItem = this.items[randomIndex];
-      }
-    }
-  },
-  created() {
-    this.getRandomItem();
-  },
-  computed: {
-    filteredItems() {
-      return this.searchQuery ? this.items.filter(item =>
-        item.barrage.toLowerCase().includes(this.searchQuery.toLowerCase())
-      ) : [];
-    },
-    diudiugaokao() {
-      const now = new Date();
-      const diffTime = this.targetDate - now;
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      return diffDays;
-    },
-    DaoJiShi() {
-      const now1 = new Date();
-      const TimeGap = this.DaoJiShiDate - now1;
-      const DJS_Date = Math.ceil(TimeGap / (1000 * 60 * 60 * 24));
-      return DJS_Date;
-    }
-  },
 
 
-};
-
-</script>
 
 <script setup>
-import {reactive} from 'vue'
+import { reactive } from 'vue';
 import request from "@/utils/request";
-import {ElMessage} from 'element-plus'
+import { ElMessage } from 'element-plus';
+import { ref, computed, onMounted } from 'vue';
 
-const data = reactive({
-  tableData: [],
-  total: 0,
-  pageSize: 15,
-  currentPage: 1,
-})
+const searchQuery = '';
+const randomlySelectedItem = null;
 
-const load = (pageNum = 1) => {
-  request.get('/allBarrage/Page', {
-    params: {
-      pageNum: pageNum,
-      pageSize: data.pageSize
-    }
-  }).then(res => {
-    // console.log(res)
-    data.tableData = res.data?.list || []
-    data.total = res.data?.total || 0
-  }).catch(err => {
-    console.error('加载数据失败:', err)
-  })
-}
+const targetDate = new Date('2041-06-07');
+const diudiugaokao = ref(0);
 
-load(data.currentPage)
+const DaoJiShiDate = new Date('2024-06-29');
+const DaoJiShi = ref(0);
 
-const handlePageChange = (page) => {
-  data.currentPage = page
-  load(page)
-}
+const items = reactive({
+  data: [],
+});
 
+const getRandomItem = () => {
+  if (items.data.length > 0) {
+    const randomIndex = Math.floor(Math.random() * items.data.length);
+    randomlySelectedItem = items.data[randomIndex];
+  }
+};
+
+const load = () => {
+  request.get('/allBarrage/Page', {})
+      .then(res => {
+        console.log(res);
+        items.data = res.data || [];
+      })
+      .catch(err => {
+        console.error('加载数据失败:', err);
+      });
+};
+
+load();
 
 const open2 = () => {
   ElMessage({
@@ -165,19 +124,42 @@ const open4 = () => {
 
 const copyText = (text) => {
   navigator.clipboard.writeText(text)
-    .then(() => {
-      // 复制成功，可以显示提示信息  
-      open2();
-      console.log('内容已复制到剪贴板');
-    })
-    .catch((err) => {
-      // 复制失败，可以显示错误信息  
-      console.error('复制失败:', err);
-      open4()
-    });
+      .then(() => {
+        // 复制成功，可以显示提示信息
+        open2();
+        console.log('内容已复制到剪贴板');
+      })
+      .catch((err) => {
+        // 复制失败，可以显示错误信息
+        console.error('复制失败:', err);
+        open4()
+      });
+};
+const filteredItems = () => {
+  return searchQuery ? items.data.filter(item =>
+      item.barrage.toLowerCase().includes(searchQuery.toLowerCase())
+  ) : [];
 };
 
+const calculateCountdown = () => {
+  const now = new Date();
+  const diffTime1 = targetDate - now;
+  const diffTime2 = DaoJiShiDate - now;
+  diudiugaokao.value = Math.ceil(diffTime1 / (1000 * 60 * 60 * 24));
+  DaoJiShi.value = Math.ceil(diffTime2 / (1000 * 60 * 60 * 24));
+};
+
+
+// 在组件挂载时计算倒计时
+onMounted(() => {
+  calculateCountdown();
+
+  // 设置一个定时器每天更新一次倒计时
+  setInterval(calculateCountdown, 1000 * 60 * 60 * 24);
+});
+
 </script>
+
 
 <style>
 .DGjvpai {

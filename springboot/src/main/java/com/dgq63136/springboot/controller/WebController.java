@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 public class WebController {
@@ -17,6 +19,11 @@ public class WebController {
     private WebService webService;
 
 
+    @GetMapping("/allBarrage/Page")
+    public Result allBarrage(){
+        List<Barrage> barrageList = webService.allPage();
+        return Result.success(barrageList);
+    }
     @GetMapping("/JZCM/Page")
     public Result JZCM(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){

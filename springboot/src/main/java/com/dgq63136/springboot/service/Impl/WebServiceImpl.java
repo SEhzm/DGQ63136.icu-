@@ -81,4 +81,10 @@ public class WebServiceImpl implements WebService {
         return PageInfo.of(barrageList);
     }
 
+    @Override
+    public List<Barrage> allPage() {
+        List<Barrage> barrageList = webMapper.allPage();
+        return barrageList;
+    }
+
 }

@@ -15,5 +15,6 @@ public class AddServiceImpl implements AddService {
     @Override
     public void addBarrage(String table, String barrage) {
         addMapper.addBarrage(table,barrage);
+        addMapper.addAll(table,barrage);
     }
 }

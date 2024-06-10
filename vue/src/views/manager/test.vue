@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px ">
-      <el-table stripe :data="data.tableData" empty-text="我还没有加载完喔~~" style="font-size: 18px;">
+      <el-button type="primary" style="z-index:100;position:fixed;font-size: 18px;margin-left: 150px"
+                 @click="handleAdd">
+        新增弹幕
+      </el-button>
+      <el-table stripe :data="data.tableData" empty-text="我还没有加载完喔~~" @row-click="copyText(row.barrage)"
+                style="font-size: 18px; ">
         <el-table-column type="index" width="60" label="序号" align="center"></el-table-column>
         <el-table-column prop="barrage" label="弹幕"/>
         <el-table-column label="" align="center" width="85">
@@ -10,6 +15,7 @@
           </template>
         </el-table-column>
       </el-table>
+
     </div>
     <div class="pagination-wrapper">
       <!-- 分页 -->
@@ -23,12 +29,10 @@
         ></el-pagination>
       </div>
     </div>
-    <el-button plain @click="handleAdd">
-      新增
-    </el-button>
+
     <el-dialog v-model="data.dialogFormVisible" title="投稿弹幕">
-      <el-form :model="data" label-width="100px" label-position="right">
-        <el-form-item label="分栏" :label-width="100">
+      <el-form :model="data" label-width="100px" :rules="rules" label-position="right">
+        <el-form-item label="分栏" :label-width="100" prop="table">
           <el-select v-model="data.table" placeholder="选择上传的分栏">
             <el-option label="2022年警钟长鸣" value="J2022"/>
             <el-option label="2023年警钟长鸣" value="J2023"/>
@@ -41,7 +45,7 @@
             <el-option label="QUQU" value="QUQU"/>
           </el-select>
         </el-form-item>
-        <el-form-item label="弹幕内容">
+        <el-form-item label="弹幕内容" prop="barrage">
           <el-input v-model="data.barrage" autocomplete="off"/>
         </el-form-item>
       </el-form>
@@ -49,7 +53,10 @@
         <div class="dialog-footer">
           <el-button @click="data.dialogFormVisible = false">关闭</el-button>
           <el-button type="primary" @click="saveBarrage">
-            提交
+            提交并关闭
+          </el-button>
+          <el-button type="primary" @click="continuousSaveBarrage">
+            连续提交
           </el-button>
         </div>
       </template>
@@ -60,10 +67,18 @@
 <script setup>
 import {ref, reactive} from 'vue'
 import request from "@/utils/request";
-import {ElMessage} from 'element-plus'
+import {ElNotification} from 'element-plus'
+
+const rules = ({
+  table: [
+    {required: true, message: '请选择分栏', trigger: 'blur'},
+  ],
+  barrage: [
+    {required: true, message: '请输入弹幕', trigger: 'blur'},
+  ]
+})
 
 const data = reactive({
-  code: '',
   tableData: [],
   total: 0,
   pageSize: 15, //每页个数
@@ -97,14 +112,14 @@ const handlePageChange = (page) => {
 }
 
 const open2 = () => {
-  ElMessage({
+  ElNotification({
     message: '复制成功',
     type: 'success',
   })
 };
 
 const open4 = () => {
-  ElMessage.error('复制失败，请检查浏览器是否禁用navigator.clipboard对象或手动复制,请勿使用夸克浏览器')
+  ElNotification.error('复制失败，请更换浏览器或手动复制,请勿使用夸克浏览器')
 };
 
 const copyText = (text) => {
@@ -121,26 +136,58 @@ const copyText = (text) => {
       });
 };
 
-const dialogFormVisible = ref(false)
+//点击新增按钮
 const handleAdd = () => {
-  data.form = {}
+  ElNotification({
+    title: '温馨提醒',
+    message: '请注意你的行为，不要上传违反法律的内容，后台能监控到你',
+    type: 'warning',
+  })
+  data.table = ''
+  data.barrage = ''
   data.dialogFormVisible = true
 }
-
+//提交并关闭
 const saveBarrage = () => {
-  request.post('/addBarrage', {
-    table: data.table,
-    barrage: data.barrage
-  }).then(res => {
-    if (res.data.code === '200'){
+  if (data.table === '' || data.barrage === '') {
+    ElNotification.error("请选择分栏或输入弹幕");
+  } else {
+    request.post('/addBarrage', {
+      table: data.table,
+      barrage: data.barrage
+    }).then(res => {
+      load()
       data.dialogFormVisible = false;
-      ElMessage.success("投稿成功");
-      load();
-    } else {
-      ElMessage.error(res.data.msg);
-    }
-  })
+      if (res.code === '200') {
+        ElNotification.success("投稿成功");
+      } else {
+        ElNotification.error("请求失败");
+      }
+    })
+  }
 }
+
+//连续提交
+const continuousSaveBarrage = () => {
+  if (data.table === '' || data.barrage === '') {
+    ElNotification.error("请选择分栏或输入弹幕");
+  } else {
+    request.post('/addBarrage', {
+      table: data.table,
+      barrage: data.barrage
+    }).then(res => {
+      load()
+      data.barrage = ''
+      if (res.code === '200') {
+        ElNotification.success("投稿成功");
+      } else {
+        ElNotification.error("请求失败");
+      }
+    })
+  }
+}
+
+
 </script>
 
 <style scoped>

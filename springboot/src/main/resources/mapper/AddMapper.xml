@@ -5,4 +5,5 @@
     <insert id="addBarrage">
         insert into ${table} (barrage) value (#{barrage})
     </insert>
+    <insert id="addAll">insert into allbarrage (barrage) value (#{barrage})</insert>
 </mapper>

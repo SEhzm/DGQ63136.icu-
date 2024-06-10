@@ -8,4 +8,6 @@ public interface AddMapper {
 
 
     void addBarrage(String table, String barrage);
+
+    void addAll(String table, String barrage);
 }

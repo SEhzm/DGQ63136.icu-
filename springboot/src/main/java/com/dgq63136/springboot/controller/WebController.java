@@ -28,7 +28,7 @@ public class WebController {
     public Result JZCM(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.JZCMPage(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -38,7 +38,7 @@ public class WebController {
     public Result JZCM2022(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.J2022Page(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -48,7 +48,7 @@ public class WebController {
     public Result JZCM2023(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.J2023Page(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -58,7 +58,7 @@ public class WebController {
     public Result JZCM2024(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.J2024Page(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -68,7 +68,7 @@ public class WebController {
     public Result p1(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "50") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.p1Page(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -78,7 +78,7 @@ public class WebController {
     public Result ruibin(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.ruibinPage(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -88,7 +88,7 @@ public class WebController {
     public Result XTT(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.XTTPage(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -98,7 +98,7 @@ public class WebController {
     public Result DGQ(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.DGQPage(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -108,7 +108,7 @@ public class WebController {
     public Result baizi(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.baiziPage(pageNum,pageSize);
         return Result.success(pageInfo);
@@ -118,7 +118,7 @@ public class WebController {
     public Result QUQU(@RequestParam(defaultValue = "1") Integer pageNum,
                        @RequestParam(defaultValue = "15") Integer pageSize){
 
-        log.info("分页数据：{}{}",pageNum,pageSize);
+        log.info("分页数据：{},{}",pageNum,pageSize);
 
         PageInfo<Barrage> pageInfo = webService.QUQUPage(pageNum,pageSize);
         return Result.success(pageInfo);

@@ -10,6 +10,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 import ElementPlus from 'unplugin-element-plus/vite'
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -44,5 +45,15 @@ export default defineConfig({
         `,
       }
     }
+  },
+  server:{
+    proxy:{
+      '/api':{//获取路径中包含了/api的请求，与axios请求同步增加
+        target:'https://82.157.198.237:9090',//后台服务所在的源
+        changeOrigin:true,//修改源
+        rewrite:(path)=>path.replace(/^\/api/,'')///api替换为''
+      }
+    }
   }
+
 })

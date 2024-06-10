@@ -3,7 +3,7 @@ import router from '../router'
 import axios from "axios";
 
 const request = axios.create({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: 'http://82.157.198.237:9090',
     timeout: 30000  // 后台接口超时时间设置
 })
 

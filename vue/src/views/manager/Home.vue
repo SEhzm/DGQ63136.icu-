@@ -3,15 +3,15 @@
     <img src="https://pic.imgdb.cn/item/6607ee969f345e8d03ae656d.png" alt="DG举牌" class="DGjvpai">
     <div class="card" style="line-height: 30px">
       <div>
-        <b style="margin-left:25px;font-size:27px;color:red;">🏮🏮🏮🏮2024年3月26日下午15:12，恭喜丢丢出生。🏮🏮🏮🏮
-          <br>距离丢丢高考还有{{ diudiugaokao }}天
+        <b style="margin-left:25px;font-size:27px;color:red;">🎂🎂🎂🎂生日快乐冬瓜强🎂🎂🎂🎂
+<!--          <br>距离丢丢高考还有{{ diudiugaokao }}天-->
           <br>距离冬瓜超哥刘頔钙奶马飞 瓦0：13 一周年还有{{ DaoJiShi }}天，警钟长鸣！
           <img src="https://pic.imgdb.cn/item/6607ee8f9f345e8d03ae39d8.png" alt="捏狗头" class="dog_head"></b>
       </div>
 
     </div>
     <div class="card" style="line-height: 30px;margin-top: 10px;">
-      <div><b>鉴于流量，后续不定时更新。<em style="font-size: 17px;color: red;">新增时光相册2015年-2024年</em></b></div>
+      <div><b><em style="font-size: 17px;color: red;">新增时光相册2015年-2024年(可评论)，新增在线投稿弹幕(可直接查看，不用审核版)</em></b></div>
     </div>
 
     <div class="card" style="line-height: 30px; margin-top:8px ;">
@@ -26,7 +26,8 @@
     <div class="card" style="line-height: 50px; margin-top: 8px;">
       <div>
         <el-button type="primary" @click="getRandomItem">点我随机一条弹幕</el-button>
-        <el-table v-if="randomlySelectedItem" :data="[randomlySelectedItem]" style="font-family: 微软雅黑; font-size: 20px;">
+        <el-table v-if="randomlySelectedItem" :data="[randomlySelectedItem]"
+                  style="font-family: 微软雅黑; font-size: 20px;">
           <el-table-column prop="barrage" label="弹幕"></el-table-column>
           <el-table-column label="" align="center" width="85">
             <template #default="scope">
@@ -61,24 +62,47 @@
       </div>
     </div>
 
-    <div class="card" style="line-height: 100px ;margin-top: 8px; text-align: center;">
-      <a href="https://www.wjx.cn/vm/P9UjaRI.aspx# " target="_blank" style="font-size: 25px;"> <img
-          src="https://pic.imgdb.cn/item/6607ee909f345e8d03ae3cc1.png" alt="👍👍👍" class="good">我有更好的弹幕！点击投稿！！</a>
-    </div>
+    <div class="card" style="margin-top: 8px; text-align: center;">
+
+      <div style="width: 700px;">
+        <el-form :model="data" label-width="100px" :rules="rules" label-position="right">
+          <el-form-item label="分栏" :label-width="100" prop="table">
+            <el-select v-model="data.table" placeholder="选择上传的分栏">
+              <el-option label="2022年警钟长鸣" value="J2022"/>
+              <el-option label="2023年警钟长鸣" value="J2023"/>
+              <el-option label="2024年警钟长鸣" value="J2024"/>
+              <el-option label="+1" value="p1"/>
+              <el-option label="🐘超哥🐘" value="ruibin"/>
+              <el-option label="小团体" value="XTT"/>
+              <el-option label="DGQ" value="DGQ"/>
+              <el-option label="白字" value="baizi"/>
+              <el-option label="QUQU" value="QUQU"/>
+            </el-select>
+          </el-form-item>
+          <el-form-item label="弹幕内容" prop="barrage">
+            <el-input v-model="data.barrage" autocomplete="off"/>
+          </el-form-item>
+          <el-button type="primary" @click="saveBarrage" style="font-size: 20px;">
+            投稿
+          </el-button>
+        </el-form>
+      </div>
+
+      <img src="https://pic.imgdb.cn/item/6607ee909f345e8d03ae3cc1.png" alt="👍👍👍" class="good">&nbsp;
+      </div>
     <div style="text-align: center;font-size: 17px;margin-left: -250px;">
-      <a href="https://beian.miit.gov.cn/" target="_blank">本网站基于腾讯云服务器搭建&nbsp;&nbsp;&nbsp;&nbsp; Copyright © 2024
+      <a href="https://beian.miit.gov.cn/" target="_blank">本网站基于腾讯云服务器搭建&nbsp;&nbsp;&nbsp;&nbsp; Copyright
+        © 2024
         桂ICP备2024022150号</a>
     </div>
   </div>
 </template>
 
 
-
-
 <script setup>
-import { ref, reactive, computed ,onMounted} from 'vue';
+import {ref, reactive, computed, onMounted} from 'vue';
 import request from "@/utils/request";
-import { ElMessage } from 'element-plus';
+import {ElMessage, ElNotification} from 'element-plus';
 
 
 const searchQuery = ref('');
@@ -90,8 +114,60 @@ const diudiugaokao = ref(0);
 const DaoJiShiDate = new Date('2024-06-29');
 const DaoJiShi = ref(0);
 
+const rules = ({
+  table: [
+    {required: true, message: '请选择分栏', trigger: 'blur'},
+  ],
+  barrage: [
+    {required: true, message: '请输入弹幕', trigger: 'blur'},
+  ]
+})
+
+//提交
+const saveBarrage = () => {
+  if (data.table === '' || data.barrage === '') {
+    ElNotification.error("请选择分栏或输入弹幕");
+  } else {
+    request.post('/addBarrage', {
+      table: data.table,
+      barrage: data.barrage
+    }).then(res => {
+      load()
+      data.dialogFormVisible = false;
+      if (res.code === '200') {
+        ElNotification.success("投稿成功");
+      } else {
+        ElNotification.error("请求失败");
+      }
+    })
+  }
+}
+
+//连续提交
+const continuousSaveBarrage = () => {
+  if (data.table === '' || data.barrage === '') {
+    ElNotification.error("请选择分栏或输入弹幕");
+  } else {
+    request.post('/addBarrage', {
+      table: data.table,
+      barrage: data.barrage
+    }).then(res => {
+      load()
+      data.barrage = ''
+      if (res.code === '200') {
+        ElNotification.success("投稿成功");
+      } else {
+        ElNotification.error("请求失败");
+      }
+    })
+  }
+}
+
+
 const data = reactive({
   tableData: [],
+  table: '',
+  barrage: '',
 })
 
 const load = () => {
@@ -174,7 +250,7 @@ onMounted(() => {
 
 <style>
 .DGjvpai {
-  height: 100px;
+  height: 80px;
   margin-bottom: -11px;
   display: flex;
   align-items: center;
@@ -194,9 +270,8 @@ onMounted(() => {
 }
 
 .good {
-  margin-top: -61px;
+  margin-top: -330px;
   height: 175px;
-  position: absolute;
-  margin-left: -200px;
+  margin-left: 300px;
 }
 </style>

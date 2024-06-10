@@ -136,7 +136,7 @@
           <div class="her">
             <el-row class="mb-4">
               <el-button type="primary" @click="complaintButton">
-                建议/提交BUG
+                上传照片<br>建议/提交BUG
               </el-button>
             </el-row>
           </div>
@@ -155,7 +155,7 @@
 export default {
   methods: {
     complaintButton() {
-      window.open("https://www.wjx.cn/vm/QmBulzI.aspx# ");
+      window.open("https://www.wjx.cn/vm/rQUgnS0.aspx# ");
     },
     toggleCollapse() {
       this.isCollapse = !this.isCollapse

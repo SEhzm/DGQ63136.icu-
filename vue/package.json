@@ -10,7 +10,9 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "axios": "^1.6.2",
+    "cors": "^2.8.5",
     "element-plus": "^2.7.3",
+    "express": "^4.19.2",
     "leancloud-storage": "^4.15.2",
     "sass": "^1.69.5",
     "unplugin-element-plus": "^0.8.0",

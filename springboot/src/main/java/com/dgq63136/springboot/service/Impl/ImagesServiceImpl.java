@@ -32,6 +32,6 @@ public class ImagesServiceImpl implements ImagesService {
     public void addComment(Comment comment) {
         comment.setCreatedAt(LocalDateTime.now().toString());
         imagesMapper.addComment(comment);
-        System.out.println(comment);
+//        System.out.println(comment);
     }
 }

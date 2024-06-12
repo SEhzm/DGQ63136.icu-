@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -29,7 +30,15 @@ public class ImagesServiceImpl implements ImagesService {
 
     @Override
     public void addComment(Comment comment) {
-        comment.setCreatedAt(LocalDateTime.now().toString());
+        // 获取当前的LocalDateTime对象
+        LocalDateTime now = LocalDateTime.now();
+
+        // 创建一个 DateTimeFormatter 对象，格式化模式为"yyyy-MM-dd HH:mm:ss"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        // 使用formatter将LocalDateTime格式化为字符串
+        String formattedNow = now.format(formatter);
+        comment.setCreatedAt(formattedNow);
         imagesMapper.addComment(comment);
 //        System.out.println(comment);
     }

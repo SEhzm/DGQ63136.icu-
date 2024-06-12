@@ -1,9 +1,9 @@
 server:
   port: 9090
-#  ssl:
-#    key-store: classpath:ssl.jks
-#    key-store-password: 123456
-#    key-password: 123456
+  ssl:
+    key-store: classpath:ssl.jks
+    key-store-password: 123456
+    key-password: 123456
 
 # 数据库配置
 spring:

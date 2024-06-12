@@ -120,6 +120,7 @@ const saveComment = (Obimage) => {
     }).then(res => {
       // console.log(res)
       load()
+      ElNotification.success("评论成功");
       image.dialogFormVisible = false
     }).catch(err => {
       console.error('加载数据失败:', err)

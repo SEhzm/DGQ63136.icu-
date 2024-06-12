@@ -15,4 +15,7 @@ public interface ImagesMapper {
 
     @Select("select * from comments where image_id = #{id}")
     List<Comment> showCommert(Long id);
+
+
+//    void addComment(Comment comment);
 }

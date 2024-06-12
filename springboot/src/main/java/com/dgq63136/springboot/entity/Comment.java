@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.zip.DataFormatException;
 
 @Data
 @NoArgsConstructor
@@ -15,5 +14,5 @@ public class Comment {
     private Long imageId; // 外键，关联到Image表的id
     private String douyuID;
     private String createdAt;
-    private String content;
+    private String Commentname;
 }

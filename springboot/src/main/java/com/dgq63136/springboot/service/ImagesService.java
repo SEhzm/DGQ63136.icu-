@@ -8,5 +8,5 @@ import java.util.List;
 public interface ImagesService {
     List<Image> showImage();
 
-//    void addComment(Comment comment);
+    void addComment(Comment comment);
 }

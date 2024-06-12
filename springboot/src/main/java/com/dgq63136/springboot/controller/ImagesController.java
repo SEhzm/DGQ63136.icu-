@@ -29,15 +29,14 @@ public class ImagesController {
     public Result showImage(){
         log.info("进入了时光相册");
         List<Image> list = imagesService.showImage();
-
         return Result.success(list);
     }
 
-    @PostMapping("/addComment")
+    @PostMapping("/addCommentname")
     public Result addComment(@RequestBody Comment comment){
         log.info("{} 评论了：{}",comment.getDouyuID(),comment.getCommentname());
-//        imagesService.addComment(comment);
-        System.out.println(comment);
+        imagesService.addComment(comment);
+//        System.out.println(comment);
         return Result.success();
     }
 }

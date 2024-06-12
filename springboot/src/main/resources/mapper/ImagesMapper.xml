@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.dgq63136.springboot.mapper.ImagesMapper">
     <insert id="addComment">
-
+        insert into comments(image_id, douyuID, createdAt, Commentname) VALUES (#{imageId},#{douyuID},#{createdAt},#{Commentname})
 
     </insert>
 </mapper>

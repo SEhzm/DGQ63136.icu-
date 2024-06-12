@@ -17,5 +17,6 @@ public interface ImagesMapper {
     List<Comment> showCommert(Long id);
 
 
-//    void addComment(Comment comment);
+
+    void addComment(Comment comment);
 }

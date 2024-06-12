@@ -28,9 +28,10 @@ public class ImagesServiceImpl implements ImagesService {
         return imageList;
     }
 
-//    @Override
-//    public void addComment(Comment comment) {
-//        comment.setCreatedAt(LocalDateTime.now().toString());
-//        imagesMapper.addComment(comment);
-//    }
+    @Override
+    public void addComment(Comment comment) {
+        comment.setCreatedAt(LocalDateTime.now().toString());
+        imagesMapper.addComment(comment);
+        System.out.println(comment);
+    }
 }

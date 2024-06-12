@@ -72,7 +72,7 @@ const image = reactive({
 
 })
 
-const load = (pageNum = 1) => {
+const load = () => {
   request.get('/showImage', {
   }).then(res => {
     // console.log(res)

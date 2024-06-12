@@ -1,6 +1,6 @@
 package com.dgq63136.springboot.service.Impl;
 
-import com.dgq63136.springboot.entity.Comment;
+
 import com.dgq63136.springboot.entity.Image;
 import com.dgq63136.springboot.mapper.ImagesMapper;
 import com.dgq63136.springboot.service.ImagesService;
@@ -17,7 +17,6 @@ public class ImagesServiceImpl implements ImagesService {
 
     @Override
     public List<Image> showImage() {
-
         List<Image> imageList = imagesMapper.showImage();
         imageList.forEach(image -> {
             image.setComments(imagesMapper.showCommert(image.getId()));

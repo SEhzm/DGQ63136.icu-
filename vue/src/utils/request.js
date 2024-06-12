@@ -3,7 +3,10 @@ import router from '../router'
 import axios from "axios";
 
 const request = axios.create({
-    baseURL: 'https://dgq63136.icu:9090',
+    //线上版本测试
+    // baseURL: 'https://dgq63136.icu:9090',
+    //线下测试
+    baseURL: 'http://localhost:9090',
     timeout: 30000  // 后台接口超时时间设置
 })
 

@@ -17,4 +17,5 @@ public class AddServiceImpl implements AddService {
         addMapper.addBarrage(table,barrage);
         addMapper.addAll(table,barrage);
     }
+
 }

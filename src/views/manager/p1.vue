@@ -25,12 +25,8 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import request from "@/utils/request";
 import { ElMessage } from 'element-plus'
 
-request.get('/').then(res => {
-  console.log(res)
-})
 //原始数据
 const tableData = ref([
 

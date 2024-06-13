@@ -21,6 +21,7 @@
     "@vitejs/plugin-vue": "^4.4.0",
     "unplugin-auto-import": "^0.16.7",
     "unplugin-vue-components": "^0.25.2",
-    "vite": "^4.4.11"
+    "vite": "^4.4.11",
+	"leancloud-storage": "^4.13.0"
   }
 }

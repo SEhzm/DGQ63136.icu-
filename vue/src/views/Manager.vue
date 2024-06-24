@@ -13,6 +13,9 @@
 
           <div style="display: flex; justify-content: flex-end;margin-left: auto;">
 
+            <a href="https://gitee.com/hzming1/dgq63136-vue3-springboot" target="_blank">
+              <img src="https://gitee.com/static/images/logo.svg?t=158106664" alt="gitee" style="margin-right: 15px;">
+            </a>
             <a href="https://yuba.douyu.com/user/main/lOdEpeOJzwnR" target="_blank">
               <img src="@/assets/imgs/douyu.jpg" alt="douyu" style="margin-right: 15px;">
             </a>

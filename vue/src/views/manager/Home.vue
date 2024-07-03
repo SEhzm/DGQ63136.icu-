@@ -5,7 +5,7 @@
       <div>
         <b style="margin-left:25px;font-size:27px;color:red;">🎂🎂🎂🎂生日快乐冬瓜强🎂🎂🎂🎂
 <!--          <br>距离丢丢高考还有{{ diudiugaokao }}天-->
-          <br>距离冬瓜超哥刘頔钙奶马飞 瓦0：13 一周年还有{{ DaoJiShi }}天，警钟长鸣！
+          <br>距离9月17日00:04:17批高户外看女主播流哈喇子，并表示独占63136还有{{ DaoJiShi }}天，警钟长鸣！
           <img src="https://pic.imgdb.cn/item/6607ee8f9f345e8d03ae39d8.png" alt="捏狗头" class="dog_head"></b>
       </div>
 
@@ -47,9 +47,6 @@
         --------搜索在这，🦐吗---------
       </span>
         <el-input v-model="searchQuery" placeholder="搜索弹幕..." style="font-size: 30px; margin-top: 30px;">
-          <template #append>
-            <el-button icon="el-icon-search"></el-button>
-          </template>
         </el-input>
         <el-table v-if="searchQuery" :data="filteredItems" stripe>
           <el-table-column prop="barrage" label="弹幕"></el-table-column>
@@ -111,7 +108,7 @@ const randomlySelectedItem = ref(null);
 const targetDate = new Date('2041-06-07');
 const diudiugaokao = ref(0);
 
-const DaoJiShiDate = new Date('2024-06-29');
+const DaoJiShiDate = new Date('2024-09-17');
 const DaoJiShi = ref(0);
 
 const rules = ({
@@ -270,7 +267,8 @@ onMounted(() => {
 }
 
 .good {
-  margin-top: -330px;
+  position: absolute;
+  margin-top: -150px;
   height: 175px;
   margin-left: 300px;
 }

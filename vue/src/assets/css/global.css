@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -7,11 +9,9 @@ body {
     padding: 0;
     color: #333;
 }
-
 a {
     text-decoration: none;
 }
-
 .card {
     background-color: #fff;
     border-radius: 5px;

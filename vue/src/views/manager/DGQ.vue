@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px ">
-      <el-button type="primary" style="z-index:100;position:fixed;font-size: 18px;margin-left: 150px"
+      <el-button type="primary" style="z-index:100;position:absolute;font-size: 18px;margin-left: 150px"
                  @click="handleAdd">
         新增弹幕
       </el-button>

@@ -21,10 +21,12 @@
 ------
 
 ### 技术栈
-
+前端：
 vue3+elementUI+Javascript
+后端：
+SpringBoot+MyBatis+MySQL+
 
-鉴于目前服务器配置和数据量，暂时使用纯静态前端页面，后续会开发前后端分离的完整页面。
+
 
 ## 声明
 
@@ -54,6 +56,10 @@ npm run dev
 ```
 npm run build
 ```
+
+### 后端启动：
+1.配置https请求证书；
+2.配置跨域设置
 
 有建议或BUG请提交在[这里提交建议和bug](https://www.wjx.cn/vm/QmBulzI.aspx#)
 

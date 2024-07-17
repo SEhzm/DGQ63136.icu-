@@ -18,7 +18,7 @@ app.use(ElementPlus, {
 // 设置全局定时器
 setInterval(() => {
   location.reload(); // 刷新整个页面  
-}, 3600000); //设置时间，ms
+}, 86400000); //设置时间，ms
 
 app.mount('#app')
 

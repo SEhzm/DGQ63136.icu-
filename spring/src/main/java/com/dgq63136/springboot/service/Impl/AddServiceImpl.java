@@ -14,8 +14,16 @@ public class AddServiceImpl implements AddService {
 
     @Override
     public void addBarrage(String table, String barrage) {
-        addMapper.addBarrage(table,barrage);
-        addMapper.addAll(table,barrage);
+        addMapper.addBarrage(table, barrage);
+        addMapper.addAll(table, barrage);
+    }
+
+    @Override
+    public void addCnt(String table, String id) {
+        String DBcnt = addMapper.getCntById(table, id);
+        Integer cnt = Integer.valueOf(DBcnt);
+        cnt = cnt + 1;
+        addMapper.addCnt(table, id,cnt.toString());
     }
 
 }

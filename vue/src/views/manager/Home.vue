@@ -17,8 +17,8 @@
     <div class="card" style="line-height: 30px; margin-top:8px ;">
       <p>你好，各位白字。 <br>
         这是一个收集厕所弹幕的网站: <span style="font-size: 24px; font-weight: bold; ">
-          <a href="https://dgq63136.icu" style="color: red;">DGQ63136.icu<img
-              src="https://pic.imgdb.cn/item/6607ee8f9f345e8d03ae393c.png" alt="鸡毙你" class="biabiabia"></a></span>
+          <a href="https://dgq63136.icu" style="color: red;">DGQ63136.icu
+            <img src="https://pic.imgdb.cn/item/6607ee8f9f345e8d03ae393c.png" alt="鸡毙你" class="biabiabia"></a></span>
         <br>
       </p>
     </div>
@@ -31,7 +31,7 @@
           <el-table-column prop="barrage" label="弹幕"></el-table-column>
           <el-table-column label="" align="center" width="85">
             <template #default="scope">
-              <el-button type="primary" @click="copyText(scope.row.barrage)">复制</el-button>
+              <el-button type="primary" @click="copyText(scope.row)">复制</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -52,7 +52,7 @@
           <el-table-column prop="barrage" label="弹幕"></el-table-column>
           <el-table-column label="" align="center" width="85">
             <template #default="scope">
-              <el-button type="primary" @click="copyText(scope.row.barrage)">复制</el-button>
+              <el-button type="primary" @click="copyText(scope.row)">复制</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -100,8 +100,18 @@
 import {ref, reactive, computed, onMounted} from 'vue';
 import request from "@/utils/request";
 import {ElMessage, ElNotification} from 'element-plus';
-
-
+// 获取IP
+const getUserIp = () => {
+  fetch('https://api.ipify.org/?format=json')
+      .then(response => response.json())
+      .then(data => {
+        localStorage.setItem("ip",data.ip)
+      })
+      .catch(error => {
+        console.log(error);
+      });
+}
+getUserIp()
 const searchQuery = ref('');
 const randomlySelectedItem = ref(null);
 
@@ -139,27 +149,6 @@ const saveBarrage = () => {
     })
   }
 }
-
-//连续提交
-const continuousSaveBarrage = () => {
-  if (data.table === '' || data.barrage === '') {
-    ElNotification.error("请选择分栏或输入弹幕");
-  } else {
-    request.post('/addBarrage', {
-      table: data.table,
-      barrage: data.barrage
-    }).then(res => {
-      load()
-      data.barrage = ''
-      if (res.code === '200') {
-        ElNotification.success("投稿成功");
-      } else {
-        ElNotification.error("请求失败");
-      }
-    })
-  }
-}
-
 
 const data = reactive({
   tableData: [],
@@ -211,12 +200,18 @@ const open4 = () => {
   ElMessage.error('复制失败，请检查浏览器是否禁用navigator.clipboard对象或手动复制,请勿使用夸克浏览器')
 };
 
-const copyText = (text) => {
-  navigator.clipboard.writeText(text)
+const copyText = (row) => {
+  // console.log(row)
+  navigator.clipboard.writeText(row.barrage)
       .then(() => {
         // 复制成功，可以显示提示信息
         open2();
         console.log('内容已复制到剪贴板');
+        request.post('/addCnt', {
+          ip: localStorage.getItem('ip'),
+          table: 'allbarrage',
+          id: row.id
+        })
       })
       .catch((err) => {
         // 复制失败，可以显示错误信息
@@ -260,15 +255,15 @@ onMounted(() => {
 }
 
 .biabiabia {
-  margin-top: -56px;
-  height: 115px;
+  margin-top: -40px;
+  height: 85px;
   position: absolute;
   margin-left: 10px;
 }
 
 .good {
   position: absolute;
-  margin-top: -150px;
+  margin-top: -144px;
   height: 175px;
   margin-left: 300px;
 }

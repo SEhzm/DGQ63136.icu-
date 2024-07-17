@@ -6,7 +6,7 @@
 
 网站地址：**DGQ63136.icu**
 
-请使用EDGE浏览器，chrome浏览器访问。
+请使用Edge浏览器，chrome浏览器,QQ浏览器等浏览器访问。
 
 移动端请勿使用夸克浏览器（目前已发现bug），会出现复制按钮失效。
 
@@ -21,10 +21,13 @@
 ------
 
 ### 技术栈
+前端：
+Vue3 + Vite + axios + elementUIPlus + Typescript
 
-vue3+elementUI+Javascript
+后端：
+SpringBoot + MyBatis + MySQL + Redis
 
-鉴于目前服务器配置和数据量，暂时使用纯静态前端页面，后续会开发前后端分离的完整页面。
+
 
 ## 声明
 
@@ -34,9 +37,9 @@ vue3+elementUI+Javascript
 
 作者：
 
-斗鱼ID：强哥咱跟她干吧 
+斗鱼ID：强哥咱跟她干吧
 
- QQ：2693445032
+QQ：2693445032
 
 ------
 
@@ -55,6 +58,15 @@ npm run dev
 npm run build
 ```
 
+### 后端启动：
+1.配置https请求证书
+baseURL
+(1.测试)注释yml中ssl,request.ts中调整baseURL
+
+(2.上线)放开yml注释,request.ts中调整baseURL
+
+2.配置跨域设置(非必须)
+
 有建议或BUG请提交在[这里提交建议和bug](https://www.wjx.cn/vm/QmBulzI.aspx#)
 
-弹幕投稿请在[这里投稿新鲜弹幕](https://www.wjx.cn/vm/P9UjaRI.aspx#) 
+

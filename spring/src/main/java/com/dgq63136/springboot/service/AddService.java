@@ -6,4 +6,6 @@ public interface AddService {
 
 
     void addBarrage(String table, String barrage);
+
+    void addCnt(String table, String id);
 }

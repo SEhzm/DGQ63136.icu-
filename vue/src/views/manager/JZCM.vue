@@ -11,7 +11,7 @@
         <el-table-column prop="barrage" label="弹幕"/>
         <el-table-column label="" align="center" width="85">
           <template #default="scope">
-            <el-button type="primary" @click="copyText(scope.row.barrage)">复制</el-button>
+            <el-button type="primary" @click="copyText(scope.row)">复制</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -95,7 +95,7 @@ const load = (pageNum = 1) => {
       pageSize: data.pageSize
     }
   }).then(res => {
-    // console.log(res)
+    console.log(res)
     data.tableData = res.data?.list || []
     data.total = res.data?.total || 0
     console.log(data.tableData)
@@ -122,8 +122,9 @@ const open4 = () => {
   ElNotification.error('复制失败，请更换浏览器或手动复制,请勿使用夸克浏览器')
 };
 
-const copyText = (text) => {
-  navigator.clipboard.writeText(text)
+const copyText = (row) => {
+  // console.log(row)
+  navigator.clipboard.writeText(row.barrage)
       .then(() => {
         // 复制成功，可以显示提示信息
         open2();

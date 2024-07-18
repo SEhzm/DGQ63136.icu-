@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class Barrage {
     private Integer id;
     private String barrage;
+    private String cnt;
 }

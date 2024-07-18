@@ -6,7 +6,7 @@
         投稿弹幕
       </el-button>
       <el-table  stripe :data="data.tableData" empty-text="我还没有加载完喔~~"
-                 style="font-size: 18px;" :header-cell-style="{color: '#ff0000', fontSize: '15px'}"
+                style="font-size: 18px;" :header-cell-style="{color: '#ff0000', fontSize: '15px'}"
       >
         <el-table-column width="60" prop="id" label="序号" align="center"></el-table-column>
         <el-table-column prop="barrage" label="弹幕"/>
@@ -34,7 +34,7 @@
 
     <el-dialog v-model="data.dialogFormVisible" draggable title="投稿弹幕">
       <el-form :model="data" label-width="100px" :rules="rules" label-position="right">
-        <el-form-item label="分栏" :label-width="100" prop="table">
+        <el-form-item label="分栏" :label-width="100"  prop="table">
           <el-select v-model="data.table" placeholder="选择上传的分栏">
             <el-option label="2022年警钟长鸣" value="J2022"/>
             <el-option label="2023年警钟长鸣" value="J2023"/>
@@ -83,23 +83,25 @@ const rules = ({
 const data = reactive({
   tableData: [],
   total: 0,
-  pageSize: 50, //每页个数
+  pageSize: 15, //每页个数
   currentPage: 1, //起始页码
   dialogFormVisible: false,
   table: '',
   barrage: '',
+  ip:'',
 })
 
 const load = (pageNum = 1) => {
-  request.get('/p1/Page', {
+  request.get('/allBarrage/Page', {
     params: {
       pageNum: pageNum,
       pageSize: data.pageSize
     }
   }).then(res => {
-    // console.log(res)
-    data.tableData = res.data?.list || []
+    console.log(res)
+    data.tableData = res.data || [];
     data.total = res.data?.total || 0
+    console.log(data.tableData)
   }).catch(err => {
     console.error('加载数据失败:', err)
   })
@@ -113,6 +115,7 @@ const handlePageChange = (page) => {
 }
 
 const open2 = () => {
+  load()
   ElNotification({
     message: '复制成功',
     type: 'success',
@@ -132,15 +135,17 @@ const copyText = (row) => {
         console.log('内容已复制到剪贴板');
         request.post('/addCnt', {
           ip: localStorage.getItem('ip'),
-          table: 'p1',
+          table: 'XTT',
           id: row.id
         })
+
       })
       .catch((err) => {
         // 复制失败，可以显示错误信息
         console.error('复制失败:', err);
         open4()
       });
+
 };
 
 //点击新增按钮
@@ -154,6 +159,7 @@ const handleAdd = () => {
   data.barrage = ''
   data.dialogFormVisible = true
 }
+
 //提交并关闭
 const saveBarrage = () => {
   if (data.table === '' || data.barrage === '') {

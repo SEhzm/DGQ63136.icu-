@@ -22,6 +22,7 @@ const router = createRouter({
                 {path: 'p1', name: 'p1', component: () => import('@/views/manager/p1.vue')},
                 {path: 'ruibin', name: 'ruibin', component: () => import('@/views/manager/ruibin.vue')},
                 {path: 'image', name: 'image', component: () => import('@/views/manager/image.vue')},
+                {path: 'AllBarrage', name: 'AllBarrage', component: () => import('@/views/manager/AllBarrage.vue')},
                 {path: 'test', name: 'test', component: () => import('@/views/manager/test.vue')},
                 {path: 'test2', name: 'test2', component: () => import('@/views/manager/test2.vue')},
                 

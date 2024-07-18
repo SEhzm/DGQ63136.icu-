@@ -59,8 +59,8 @@ npm run build
 ```
 
 ### 后端启动：
-1.配置https请求证书
-baseURL
+
+
 (1.测试)注释yml中ssl,request.ts中调整baseURL
 
 (2.上线)放开yml注释,request.ts中调整baseURL

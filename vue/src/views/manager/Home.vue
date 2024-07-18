@@ -136,6 +136,7 @@ const saveBarrage = () => {
     ElNotification.error("请选择分栏或输入弹幕");
   } else {
     request.post('/addBarrage', {
+      ip:localStorage.getItem('ip'),
       table: data.table,
       barrage: data.barrage
     }).then(res => {
@@ -149,6 +150,7 @@ const saveBarrage = () => {
     })
   }
 }
+
 
 const data = reactive({
   tableData: [],

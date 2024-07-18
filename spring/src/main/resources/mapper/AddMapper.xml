@@ -13,7 +13,9 @@
     <update id="addCnt">
         update ${table}
         set cnt=#{cnt}
-        where id=#{id}
+        where id = #{id};
+#         update allbarrage
+#         set
     </update>
 
     <select id="getCntById" resultType="java.lang.String">

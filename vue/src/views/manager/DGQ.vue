@@ -5,15 +5,17 @@
                  @click="handleAdd">
         新增弹幕
       </el-button>
-      <el-table stripe :data="data.tableData" empty-text="我还没有加载完喔~~" @row-click="copyText(row.barrage)"
-                style="font-size: 18px; ">
-        <el-table-column type="index" width="60" label="序号" align="center"></el-table-column>
+      <el-table  stripe :data="data.tableData" empty-text="我还没有加载完喔~~"
+                 style="font-size: 18px;" :header-cell-style="{color: '#ff0000', fontSize: '15px'}"
+      >
+        <el-table-column width="60" prop="id" label="序号" align="center"></el-table-column>
         <el-table-column prop="barrage" label="弹幕"/>
         <el-table-column label="" align="center" width="85">
           <template #default="scope">
-            <el-button type="primary" @click="copyText(scope.row)">复制</el-button>
+            <el-button type="primary" label="操作" @click="copyText(scope.row)">复制</el-button>
           </template>
         </el-table-column>
+        <el-table-column prop="cnt" label="复制次数" min-width="5"/>
       </el-table>
 
     </div>
@@ -98,7 +100,7 @@ const load = (pageNum = 1) => {
     // console.log(res)
     data.tableData = res.data?.list || []
     data.total = res.data?.total || 0
-    console.log(data.tableData)
+    // console.log(data.tableData)
   }).catch(err => {
     console.error('加载数据失败:', err)
   })
@@ -160,6 +162,7 @@ const saveBarrage = () => {
     ElNotification.error("请选择分栏或输入弹幕");
   } else {
     request.post('/addBarrage', {
+      ip:localStorage.getItem('ip'),
       table: data.table,
       barrage: data.barrage
     }).then(res => {
@@ -180,6 +183,7 @@ const continuousSaveBarrage = () => {
     ElNotification.error("请选择分栏或输入弹幕");
   } else {
     request.post('/addBarrage', {
+      ip:localStorage.getItem('ip'),
       table: data.table,
       barrage: data.barrage
     }).then(res => {

@@ -27,12 +27,3 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 
-
-//百度统计API
-var _hmt = _hmt || [];
-(function () {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b9634ebcad194c62131c24600b2e1b10";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();

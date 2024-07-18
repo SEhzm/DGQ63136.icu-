@@ -135,7 +135,7 @@ const copyText = (row) => {
         console.log('内容已复制到剪贴板');
         request.post('/addCnt', {
           ip: localStorage.getItem('ip'),
-          table: 'XTT',
+          table: 'allbarrage',
           id: row.id
         })
 

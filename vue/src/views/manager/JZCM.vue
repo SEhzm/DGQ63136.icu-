@@ -1,21 +1,23 @@
 <template>
   <div>
-    <div class="card" style="margin-bottom: 5px ">
-      <el-button type="primary" style="z-index:100;position:absolute;font-size: 18px;margin-left: 150px"
+    <div class="card">
+      <el-button type="primary" class="handleAdd"
                  @click="handleAdd">
         投稿弹幕
       </el-button>
-      <el-table  stripe :data="data.tableData" empty-text="我还没有加载完喔~~"
-                 style="font-size: 18px;" :header-cell-style="{color: '#ff0000', fontSize: '15px'}"
+      <b style="font-size: 13px;color: red;position: absolute;z-index: 10;right: 1px;margin-top: 5px">复制次数</b>
+      <el-table stripe :data="data.tableData" empty-text="我还没有加载完喔~~"
+                class="eldtable"
+                :header-cell-style="{color: '#ff0000', fontSize: '13px',whitespace:'normal !important'}"
       >
-        <el-table-column type="index" width="60" label="序号" align="center"></el-table-column>
-        <el-table-column prop="barrage" label="弹幕"/>
-        <el-table-column label="" align="center" width="85">
+        <el-table-column width="50" prop="id" label="序号"></el-table-column>
+        <el-table-column prop="barrage" min-width="30" label="弹幕"/>
+        <el-table-column label="" align="center" min-width="15">
           <template #default="scope">
             <el-button type="primary" label="操作" @click="copyText(scope.row)">复制</el-button>
           </template>
         </el-table-column>
-        <el-table-column prop="cnt" label="复制次数" min-width="5"/>
+        <el-table-column prop="cnt" label="" min-width="5" show-overflow-tooltip="true" />
       </el-table>
 
     </div>
@@ -32,7 +34,7 @@
       </div>
     </div>
 
-    <el-dialog v-model="data.dialogFormVisible"  draggable title="投稿弹幕">
+    <el-dialog v-model="data.dialogFormVisible" draggable title="投稿弹幕" width="72%">
       <el-form :model="data" label-width="100px" :rules="rules" label-position="right">
         <el-form-item label="分栏" :label-width="100" prop="table">
           <el-select v-model="data.table" placeholder="选择上传的分栏">
@@ -196,10 +198,41 @@ const continuousSaveBarrage = () => {
 </script>
 
 <style scoped>
+.eldtable {
+  font-size: 18px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
 .pagination-wrapper {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
+.handleAdd {
+  z-index: 100;
+  position: absolute;
+  font-size: 18px;
+  margin-left: 150px
+}
+
+@media (max-width: 600px) {
+  .eldtable {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+
+  .dialogFormVisible {
+    font-size: 15px;
+  }
+
+  .handleAdd {
+    z-index: 100;
+    position: absolute;
+    font-size: 13px;
+    margin-left: 150px
+  }
+}
 </style>

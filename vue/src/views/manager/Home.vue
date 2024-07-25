@@ -1,33 +1,35 @@
 <template>
   <div>
     <img src="https://pic.imgdb.cn/item/6607ee969f345e8d03ae656d.png" alt="DG举牌" class="DGjvpai">
-    <div class="card" style="line-height: 30px">
+    <div class="card" style="line-height: 25px">
       <div>
-        <b style="margin-left:25px;font-size:27px;color:red;">🎂🎂🎂🎂生日快乐冬瓜强🎂🎂🎂🎂
-<!--          <br>距离丢丢高考还有{{ diudiugaokao }}天-->
-          <br>距离9月17日00:04:17批高户外看女主播流哈喇子，并表示独占63136还有{{ DaoJiShi }}天，警钟长鸣！
+        <b class="header-text">🎂🎂🎂🎂生日快乐冬瓜强🎂🎂🎂🎂
+          <!--          <br>距离丢丢高考还有{{ diudiugaokao }}天-->
+          <br> 距离9月17日00:04:17批高户外看女主播流哈喇子，并表示独占63136还有{{ DaoJiShi }}天，警钟长鸣！
           <img src="https://pic.imgdb.cn/item/6607ee8f9f345e8d03ae39d8.png" alt="捏狗头" class="dog_head"></b>
       </div>
 
     </div>
     <div class="card" style="line-height: 30px;margin-top: 10px;">
-      <div><b><em style="font-size: 17px;color: red;">新增时光相册2015年-2024年(可评论)，新增在线投稿弹幕(可直接查看，不用审核版)</em></b></div>
+      <div><b><em
+          style="font-size: 17px;color: red;">新增时光相册2015年-2024年(可评论)，新增在线投稿弹幕(可直接查看，不用审核版)</em></b>
+      </div>
     </div>
 
     <div class="card" style="line-height: 30px; margin-top:8px ;">
       <p>你好，各位白字。 <br>
-        这是一个收集厕所弹幕的网站: <span style="font-size: 24px; font-weight: bold; ">
+        这是一个收集厕所弹幕的网站: <span class="dgq63136">
           <a href="https://dgq63136.icu" style="color: red;">DGQ63136.icu
             <img src="https://pic.imgdb.cn/item/6607ee8f9f345e8d03ae393c.png" alt="鸡毙你" class="biabiabia"></a></span>
         <br>
       </p>
     </div>
 
-    <div class="card" style="line-height: 50px; margin-top: 8px;">
+    <div class="card" style="line-height: 0px; margin-top: 8px;">
       <div>
         <el-button type="primary" @click="getRandomItem">点我随机一条弹幕</el-button>
         <el-table v-if="randomlySelectedItem" :data="[randomlySelectedItem]"
-                  style="font-family: 微软雅黑; font-size: 20px;">
+                  style="font-family: 微软雅黑; font-size: 20px;" :header-cell-style="{fontSize: '14px',whitespace:'normal !important'}">
           <el-table-column prop="barrage" label="弹幕"></el-table-column>
           <el-table-column label="" align="center" width="85">
             <template #default="scope">
@@ -41,7 +43,7 @@
       </div>
     </div>
 
-    <div class="card" style="line-height: 50px; margin-top: 10px; margin-bottom: 10px; min-height: 120px;">
+    <div class="card" style="line-height: 40px; margin-top: 10px; margin-bottom: 10px; min-height: 80px;">
       <div>
       <span style="position: absolute; font-size: 30px; margin-top: -20px; color: blue;">
         --------搜索在这，🦐吗---------
@@ -61,7 +63,7 @@
 
     <div class="card" style="margin-top: 8px; text-align: center;">
 
-      <div style="width: 700px;">
+      <div class="Addform">
         <el-form :model="data" label-width="100px" :rules="rules" label-position="right">
           <el-form-item label="分栏" :label-width="100" prop="table">
             <el-select v-model="data.table" placeholder="选择上传的分栏">
@@ -86,8 +88,8 @@
       </div>
 
       <img src="https://pic.imgdb.cn/item/6607ee909f345e8d03ae3cc1.png" alt="👍👍👍" class="good">&nbsp;
-      </div>
-    <div style="text-align: center;font-size: 17px;margin-left: -250px;">
+    </div>
+    <div class="footer">
       <a href="https://beian.miit.gov.cn/" target="_blank">本网站基于腾讯云服务器搭建&nbsp;&nbsp;&nbsp;&nbsp; Copyright
         © 2024
         桂ICP备2024022150号</a>
@@ -105,7 +107,7 @@ const getUserIp = () => {
   fetch('https://api.ipify.org/?format=json')
       .then(response => response.json())
       .then(data => {
-        localStorage.setItem("ip",data.ip)
+        localStorage.setItem("ip", data.ip)
       })
       .catch(error => {
         console.log(error);
@@ -136,12 +138,13 @@ const saveBarrage = () => {
     ElNotification.error("请选择分栏或输入弹幕");
   } else {
     request.post('/addBarrage', {
-      ip:localStorage.getItem('ip'),
+      ip: localStorage.getItem('ip'),
       table: data.table,
       barrage: data.barrage
     }).then(res => {
       load()
       data.dialogFormVisible = false;
+      data.barrage = '';
       if (res.code === '200') {
         ElNotification.success("投稿成功");
       } else {
@@ -243,6 +246,12 @@ onMounted(() => {
 
 
 <style>
+.header-text {
+  margin-left: 25px;
+  font-size: 27px;
+  color: red;
+}
+
 .DGjvpai {
   height: 80px;
   margin-bottom: -11px;
@@ -268,5 +277,58 @@ onMounted(() => {
   margin-top: -144px;
   height: 175px;
   margin-left: 300px;
+}
+
+.dgq63136 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.Addform {
+  width: 700px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 17px;
+  margin-left: -250px;
+}
+
+@media (max-width: 600px) {
+  .header-text {
+    margin-left: 25px;
+    font-size: 17px;
+    color: red;
+  }
+
+  .DGjvpai {
+    display: none;
+  }
+
+  .biabiabia {
+    margin-top: -40px;
+    height: 85px;
+    position: absolute;
+    margin-left: 10px;
+  }
+
+  .Addform {
+    width: 90vw;
+  }
+
+  .good {
+    position: absolute;
+    margin-top: -53px;
+    height: 80px;
+    margin-left: 100px;
+  }
+  .dgq63136 {
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .footer {
+    margin-left: 0px;
+    font-size: 14px;
+  }
 }
 </style>

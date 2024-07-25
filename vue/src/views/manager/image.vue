@@ -138,12 +138,13 @@ const saveComment = (Obimage) => {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .image-block {
+  margin-right: 20px;
+  margin-bottom: 20px;
   margin-left: 1%;
-  margin-right: 1%;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -182,8 +183,7 @@ const saveComment = (Obimage) => {
 }
 
 .image-block {
-  margin-right: 20px;
-  margin-bottom: 20px;
+
 }
 
 .comment-list {
@@ -202,5 +202,15 @@ const saveComment = (Obimage) => {
 .comment-date {
   font-size: 11px;
   color: #999;
+}
+
+@media (max-width: 600px) {
+  .image-list {
+
+    width: 400px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 </style>

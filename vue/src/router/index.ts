@@ -1,4 +1,5 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
+import NotFoundView from '@/views/404.vue';
 const router = createRouter({
     history: createWebHashHistory(import.meta.env.BASE_URL),
     mode: 'history',
@@ -25,9 +26,13 @@ const router = createRouter({
                 {path: 'AllBarrage', name: 'AllBarrage', component: () => import('@/views/manager/AllBarrage.vue')},
                 {path: 'test', name: 'test', component: () => import('@/views/manager/test.vue')},
                 {path: 'test2', name: 'test2', component: () => import('@/views/manager/test2.vue')},
-                
             ]
         },
+        {
+            path: '/:catchAll(.*)', // 使用正则表达式捕获所有路径
+            name: 'NotFound',
+            component: NotFoundView,
+        }
     ]
 })
 

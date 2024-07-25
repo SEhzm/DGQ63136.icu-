@@ -5,7 +5,7 @@
                  @click="handleAdd">
         投稿弹幕
       </el-button>
-      <b style="font-size: 13px;color: red;position: absolute;z-index: 10;right: 1px;margin-top: 5px">复制次数</b>
+      <b style="font-size: 13px;color: red;position: absolute;z-index: 10;right: 30px;margin-top: 5px">复制次数</b>
       <el-table stripe :data="data.tableData" empty-text="我还没有加载完喔~~"
                 class="eldtable"
                 :header-cell-style="{color: '#ff0000', fontSize: '13px',whitespace:'normal !important'}"
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <el-dialog v-model="data.dialogFormVisible" draggable title="投稿弹幕" width="72%">
+    <el-dialog v-model="data.dialogFormVisible" draggable title="投稿弹幕" width="82%">
       <el-form :model="data" label-width="100px" :rules="rules" label-position="right">
         <el-form-item label="分栏" :label-width="100" prop="table">
           <el-select v-model="data.table" placeholder="选择上传的分栏">

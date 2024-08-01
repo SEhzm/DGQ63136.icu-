@@ -43,9 +43,9 @@
       </div>
     </div>
 
-    <div class="card" style="line-height: 40px; margin-top: 10px; margin-bottom: 10px; min-height: 80px;">
+    <div class="card" style="line-height: 45px; margin-top: 10px; margin-bottom: 10px; min-height: 80px;">
       <div>
-      <span style="position: absolute; font-size: 30px; margin-top: -20px; color: blue;">
+      <span style="position: absolute; font-size: 22px; margin-top: -20px; color: blue;">
         --------搜索在这，🦐吗---------
       </span>
         <el-input v-model="searchQuery" placeholder="搜索弹幕..." style="font-size: 30px; margin-top: 30px;">
@@ -91,8 +91,10 @@
     </div>
     <div class="footer">
       <a href="https://beian.miit.gov.cn/" target="_blank">本网站基于腾讯云服务器搭建&nbsp;&nbsp;&nbsp;&nbsp; Copyright
-        © 2024
-        桂ICP备2024022150号</a>
+        ©HZM 2024
+        桂ICP备2024022150号</a> &nbsp;
+      <img src="https://ywtb.mps.gov.cn/newhome/templates/Zwfw_Fwmh/img/main/foot-ga.png" alt="">
+      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=45040302000258" target="_blank">桂公网安备45040302000258号</a>
     </div>
   </div>
 </template>
@@ -314,12 +316,13 @@ onMounted(() => {
 
   .Addform {
     width: 90vw;
+    padding: 0;
   }
 
   .good {
     position: absolute;
     margin-top: -53px;
-    height: 80px;
+    height: 60px;
     margin-left: 100px;
   }
   .dgq63136 {

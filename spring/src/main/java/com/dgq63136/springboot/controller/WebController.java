@@ -21,9 +21,15 @@ public class WebController {
 
 
     @GetMapping("/allBarrage/Page")
-    public Result allBarrage(){
+    public Result allBarrage(@RequestParam(defaultValue = "1") Boolean status){
+        if (status){
+            log.info("进入首页");
+        }else
+        {
+            log.info("进入全部弹幕页");
+        }
         List<Barrage> barrageList = webService.allPage();
-        log.info("进入首页");
+
         return Result.success(barrageList);
     }
     @GetMapping("/JZCM/Page")

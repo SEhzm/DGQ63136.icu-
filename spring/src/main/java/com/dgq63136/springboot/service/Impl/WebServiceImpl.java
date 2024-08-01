@@ -7,8 +7,10 @@ import com.dgq63136.springboot.mapper.WebMapper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,6 +19,10 @@ public class WebServiceImpl implements WebService {
 
     @Autowired
     private WebMapper webMapper;
+
+
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Override
     public PageInfo<Barrage> JZCMPage(Integer pageNum, Integer pageSize) {
@@ -80,6 +86,7 @@ public class WebServiceImpl implements WebService {
         List<Barrage> barrageList = webMapper.QUQUPage();
         return PageInfo.of(barrageList);
     }
+
 
     @Override
     public List<Barrage> allPage() {

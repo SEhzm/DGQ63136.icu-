@@ -17,7 +17,7 @@
             <el-button type="primary" label="操作" @click="copyText(scope.row)">复制</el-button>
           </template>
         </el-table-column>
-        <el-table-column prop="cnt" label="" min-width="5" show-overflow-tooltip="true" />
+        <el-table-column prop="cnt" label="" min-width="5" show-overflow-tooltip="true"/>
       </el-table>
 
     </div>
@@ -73,6 +73,17 @@ import {ref, reactive} from 'vue'
 import request from "@/utils/request";
 import {ElNotification} from 'element-plus'
 
+const getUserIp = () => {
+  fetch('https://api.ipify.org/?format=json')
+      .then(response => response.json())
+      .then(data => {
+        localStorage.setItem("ip", data.ip)
+      })
+      .catch(error => {
+        console.log(error);
+      });
+}
+getUserIp()
 const rules = ({
   table: [
     {required: true, message: '请选择分栏', trigger: 'blur'},
@@ -96,8 +107,7 @@ const data = reactive({
 const load = (pageNum = 1) => {
   request.get('/allBarrage/Page', {
     params: {
-      pageNum: pageNum,
-      pageSize: data.pageSize
+      status: 0
     }
   }).then(res => {
     console.log(res)

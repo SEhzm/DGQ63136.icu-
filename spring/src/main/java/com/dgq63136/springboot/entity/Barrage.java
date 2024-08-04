@@ -7,6 +7,8 @@ import org.apache.ibatis.javassist.SerialVersionUID;
 
 import java.io.Serializable;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <div class="header">
       <div style="flex: 1">
@@ -15,7 +16,7 @@
               <img src="@/assets/imgs/gitee.png" alt="gitee" class="icon-img"/>
             </a>
             <a href="https://yuba.douyu.com/user/main/lOdEpeOJzwnR" target="_blank">
-              <img src="@/assets/imgs/douyu.jpg" alt="douyu" class="icon-img"/>
+              <img src="@/assets/imgs/douyu.png" alt="douyu" class="icon-img"/>
             </a>
             <a href="https://github.com/SEhzm/DGQ63136.icu-" target="_blank">
               <img src="@/assets/imgs/github.png" alt="github" class="icon-img"/>
@@ -41,7 +42,8 @@
 
     <div class="main-content">
       <div class="sidebar">
-        <el-menu router style="border: none; margin-right: auto" :default-active="$route.path"
+        <el-menu router style="border: none; margin-right: auto"
+                 :default-active="$route.path"
                  :default-openeds="['/home', '2']" :collapse="isCollapse">
           <el-button type="primary" @click="toggleCollapse" class="collapse-button">折叠
           </el-button>
@@ -69,42 +71,36 @@
 
           <el-sub-menu index="2">
             <template #title>
-              <el-icon>
+              <el-icon style="color: black">
                 <notebook/>
               </el-icon>
-              <span>警钟长鸣</span>
+              <span style="color: black">警钟长鸣</span>
             </template>
 
-            <el-menu-item index="/JZCM">
+            <el-menu-item  class="custom-menu-item" index="/JZCM">
               <!-- ====一级长鸣==== -->
-              <img src="@/assets/imgs/jz.jpg" alt="警钟" class="menu-icon"/>
+              <img src="@/assets/imgs/jz.png" alt="警钟" class="menu-icon"/>
               <span>全部警钟长鸣</span>
             </el-menu-item>
 
             <el-menu-item index="/2022">
               <!-- ====二级长鸣==== -->
-              <img src="@/assets/imgs/jz.jpg" alt="警钟" class="menu-icon"/>
+              <img src="@/assets/imgs/jz.png" alt="警钟" class="menu-icon"/>
               <span>2022年警钟长鸣</span>
             </el-menu-item>
 
-            <el-menu-item index="/2023">
+            <el-menu-item  index="/2023">
               <!-- ====三级长鸣==== -->
-              <img src="@/assets/imgs/jz.jpg" alt="警钟" class="menu-icon"/>
+              <img src="@/assets/imgs/jz.png" alt="警钟" class="menu-icon"/>
               <span>2023年警钟长鸣</span>
             </el-menu-item>
+
             <el-menu-item index="/2024">
               <!-- ====四级长鸣==== -->
-              <img src="@/assets/imgs/jz.jpg" alt="警钟" class="menu-icon"/>
+              <img src="@/assets/imgs/jz.png" alt="警钟" class="menu-icon"/>
               <span>2024年警钟长鸣</span>
             </el-menu-item>
           </el-sub-menu>
-
-          <!-- <el-menu-item index="/interesting">
-              <el-icon>
-                <Sugar/>
-              </el-icon>
-              <span>一些有趣的弹幕</span>
-            </el-menu-item> -->
 
           <el-menu-item index="p1">
             <el-icon>
@@ -193,26 +189,45 @@ const wxurl =
     "https://newres.wechat.com/t/fed_upload/08b92997-2415-408f-b706-442ed4ede518/OTE0YTAw.png";
 </script>
 
-<style scoped  lang="scss">
+<style lang="scss">
+
 @media (min-width: 601px) {
   .tab {
     display: none;
   }
-
-  .el-menu-item.is-active {
-    background-color: #dcede9 !important;
+  .el-menu {
+    background-color: transparent !important;
   }
 
-  .el-menu-item:hover {
-    color: #11a983;
+  .el-menu-item,
+  .el-sub-menu .el-menu-item {
+    color: black;
+    background-color: transparent !important;
   }
+
+
+  .el-menu-item.is-active,
+  .el-sub-menu .el-menu-item.is-active {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    color: black;
+  }
+
+  .el-menu.el-menu--vertical.v-enter-to{
+  background-color: rgba(255,255,255,0) !important;
+  }
+
+  .el-menu .el-menu-item:hover{
+    outline: 0 !important;
+    color: #2E95FB !important;
+    background: linear-gradient(270deg, #F2F7FC 0%, #FEFEFE 100%)!important;
+  }
+
 
   .header {
     height: 55px;
-    background-color: #fff;
+    opacity: 1;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ddd;
   }
 
   .header-content {
@@ -266,6 +281,7 @@ const wxurl =
   }
 
   .sidebar {
+
     width: auto;
     border-right: 0px solid #ddd;
     min-height: calc(100vh - 60px);
@@ -286,7 +302,6 @@ const wxurl =
   .content {
     flex: 1;
     width: 0;
-    background-color: #f8f8ff;
     padding: 10px;
   }
 }

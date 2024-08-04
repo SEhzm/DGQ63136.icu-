@@ -5,22 +5,23 @@
                  @click="handleAdd">
         投稿弹幕
       </el-button>
-      <b style="font-size: 13px;color: red;position: absolute;z-index: 10;right: 30px;margin-top: 5px">复制次数</b>
+      <b style="font-size: 13px;color: red;position: absolute;z-index: 10;margin-left: 53vw;margin-top: 5px">复制次数</b>
       <el-table stripe :data="data.tableData" empty-text="我还没有加载完喔~~"
                 class="eldtable"
                 :header-cell-style="{color: '#ff0000', fontSize: '13px',whitespace:'normal !important'}"
+                :cell-style="{}"
       >
-        <el-table-column width="50" prop="id" label="序号"></el-table-column>
-        <el-table-column prop="barrage" min-width="30" label="弹幕"/>
+        <el-table-column width="60" prop="id" label="序号"></el-table-column>
+        <el-table-column prop="barrage" min-width="90" label="弹幕"/>
         <el-table-column label="" align="center" min-width="15">
           <template #default="scope">
             <el-button type="primary" label="操作" @click="copyText(scope.row)">复制</el-button>
           </template>
         </el-table-column>
-        <el-table-column prop="cnt" label="" min-width="5" show-overflow-tooltip="true" />
+        <el-table-column prop="cnt" label="" min-width="5" />
       </el-table>
-
     </div>
+
     <div class="pagination-wrapper">
       <!-- 分页 -->
       <div>
@@ -72,7 +73,17 @@
 import {ref, reactive} from 'vue'
 import request from "@/utils/request";
 import {ElNotification} from 'element-plus'
-
+const getUserIp = () => {
+  fetch('https://api.ipify.org/?format=json')
+      .then(response => response.json())
+      .then(data => {
+        localStorage.setItem("ip", data.ip)
+      })
+      .catch(error => {
+        console.log(error);
+      });
+}
+getUserIp()
 const rules = ({
   table: [
     {required: true, message: '请选择分栏', trigger: 'blur'},
@@ -216,7 +227,11 @@ const continuousSaveBarrage = () => {
   font-size: 18px;
   margin-left: 150px
 }
-
+@media (min-width: 601px) {
+  .card{
+    width: 60vw;
+  }
+}
 @media (max-width: 600px) {
   .eldtable {
     font-size: 16px;

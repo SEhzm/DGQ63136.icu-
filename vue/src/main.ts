@@ -1,6 +1,4 @@
-import {
-  createApp
-} from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import ElementPlus from 'element-plus'
@@ -9,21 +7,24 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import '@/assets/css/global.css'
 
 const app = createApp(App)
+import StarrySky from '@/views/StarrySky.vue';
 
 app.use(router)
 app.use(ElementPlus, {
-  locale: zhCn,
+    locale: zhCn,
 })
 
 // 设置全局定时器
 setInterval(() => {
-  location.reload(); // 刷新整个页面  
+    location.reload(); // 刷新整个页面
 }, 86400000); //设置时间，ms
+
+app.component('StarrySky', StarrySky);
 
 app.mount('#app')
 
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-  app.component(key, component)
+    app.component(key, component)
 }
 
 

@@ -54,7 +54,17 @@
 import {ref, reactive} from 'vue'
 import request from "@/utils/request";
 import {ElNotification} from 'element-plus'
-
+const getUserIp = () => {
+  fetch('https://api.ipify.org/?format=json')
+      .then(response => response.json())
+      .then(data => {
+        localStorage.setItem("ip", data.ip)
+      })
+      .catch(error => {
+        console.log(error);
+      });
+}
+getUserIp()
 const image = reactive({
   outerImg: [],
   id: '',
@@ -172,6 +182,7 @@ const saveComment = (Obimage) => {
 }
 
 .outer {
+  color:white;
   text-align: center;
   margin-bottom: 20px;
 }

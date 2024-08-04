@@ -3,6 +3,7 @@ package com.dgq63136.springboot.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.ibatis.javassist.SerialVersionUID;
 
 import java.io.Serializable;
 
